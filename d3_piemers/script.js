@@ -1,7 +1,7 @@
 //https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv
+myfile = 'pulsa_dati.csv'
 
-
-d3.csv('data.csv', function (data) {
+d3.csv(myfile, function (data) {
   // Variables
   var body = d3.select('body')
 	var margin = { top: 50, right: 50, bottom: 50, left: 50 }
@@ -12,14 +12,14 @@ d3.csv('data.csv', function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([0,d3.min(data,function (d) { return d.asd })]),
-    	d3.max([0,d3.max(data,function (d) { return d.asd })])
+    	d3.min([0,d3.min(data,function (d) { return d.miera_pulss })]),
+    	d3.max([0,d3.max(data,function (d) { return d.miera_pulss })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([0,d3.min(data,function (d) { return d.aror })]),
-    	d3.max([0,d3.max(data,function (d) { return d.aror })])
+    	d3.min([0,d3.min(data,function (d) { return d.pulss_videospeles })]),
+    	d3.max([0,d3.max(data,function (d) { return d.pulss_videospeles })])
     	])
     .range([h,0])
 	// SVG
@@ -31,13 +31,13 @@ d3.csv('data.csv', function (data) {
 	// X-axis
 	var xAxis = d3.svg.axis()
 	  .scale(xScale)
-	  .tickFormat(formatPercent)
+	  //.tickFormat(formatPercent)
 	  .ticks(5)
 	  .orient('bottom')
   // Y-axis
 	var yAxis = d3.svg.axis()
 	  .scale(yScale)
-	  .tickFormat(formatPercent)
+	  //.tickFormat(formatPercent)
 	  .ticks(5)
 	  .orient('left')
   // Circles
@@ -45,8 +45,8 @@ d3.csv('data.csv', function (data) {
       .data(data)
       .enter()
     .append('circle')
-      .attr('cx',function (d) { return xScale(d.asd) })
-      .attr('cy',function (d) { return yScale(d.aror) })
+      .attr('cx',function (d) { return xScale(d.miera_pulss) })
+      .attr('cy',function (d) { return yScale(d.pulss_videospeles) })
       .attr('r','10')
       .attr('stroke','black')
       .attr('stroke-width',1)
@@ -66,9 +66,9 @@ d3.csv('data.csv', function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.variable +
-                           '\nReturn: ' + formatPercent(d.aror) +
-                           '\nStd. Dev.: ' + formatPercent(d.asd) })
+      .text(function (d) { return d.ID +
+                           '\nReturn: ' + (d.miera_pulss) +
+                           '\nStd. Dev.: ' + (d.pulss_videospeles) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -80,7 +80,7 @@ d3.csv('data.csv', function (data) {
       .attr('x',w)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('Annualized Standard Deviation')
+      .text('miera pulss')
   // Y-axis
   svg.append('g')
       .attr('class', 'axis')
@@ -92,5 +92,5 @@ d3.csv('data.csv', function (data) {
       .attr('y',5)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('Annualized Return')
+      .text('stresa pulss')
 })
