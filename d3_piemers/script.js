@@ -94,6 +94,10 @@ d3.csv(myfile, function (data) {
       .style('text-anchor','end')
       .text('vidējais pulss videospēles laikā')
 })
+
+
+
+
 d3.csv(myfile, function (data) {
   // Variables
   var body = d3.select('body')
