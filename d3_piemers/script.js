@@ -13,7 +13,7 @@ d3.csv(myfile, function (data) {
   var xScale = d3.scale.linear()
     .domain([
     	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
-    	d3.max([100,d3.max(data,function (d) { return d.miera_pulss })])
+    	d3.max([87,d3.max(data,function (d) { return d.miera_pulss })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
