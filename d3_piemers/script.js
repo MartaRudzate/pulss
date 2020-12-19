@@ -293,33 +293,12 @@ d3.csv(myfile, function (data) {
 
 
 
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style> /* set the CSS */
- 
-body { font: 12px Arial;}
- 
-path { 
-  stroke: steelblue;
-  stroke-width: 2;
-  fill: none;
-}
- 
-.axis path,
-.axis line {
-	fill: none;
-	stroke: grey;
-	stroke-width: 1;
-	shape-rendering: crispEdges;
-}
- 
-</style>
-<body>
+
  
 <!-- load the d3.js library -->	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
  
-<script>
+
  
 // Set the dimensions of the canvas / graph
 var	margin = {top: 30, right: 20, bottom: 30, left: 50},
@@ -380,7 +359,6 @@ d3.csv("data.csv", function(error, data) {
 		.attr("class", "y axis")
 		.call(yAxis);
  
-});
+})
  
-</script>
-</body>
+
