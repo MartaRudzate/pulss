@@ -47,10 +47,10 @@ d3.csv(myfile, function (data) {
     .append('circle')
       .attr('cx',function (d) { return xScale(d.miera_pulss) })
       .attr('cy',function (d) { return yScale(d.pulss_videospeles) })
-      .attr('r','10')
+      .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
-      .attr('fill',function (d,i) { return colorScale(i) })
+      .attr('fill',function (d,i) { if (d.dzimums == 'b') {return "#FF0000"} else {return "#00FFFF" }})
       .on('mouseover', function () {
         d3.select(this)
           .transition()
