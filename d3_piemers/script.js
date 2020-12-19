@@ -274,7 +274,7 @@ d3.csv(myfile, function (data) {
       .attr('x',w)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('pulss videospēles laikā')
+      .text('vidējais pulss videospēles laikā')
   // Y-axis
   svg.append('g')
       .attr('class', 'axis')
