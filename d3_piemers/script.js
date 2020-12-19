@@ -12,14 +12,14 @@ d3.csv(myfile, function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([0,d3.min(data,function (d) { return d.miera_pulss })]),
-    	d3.max([0,d3.max(data,function (d) { return d.miera_pulss })])
+    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
+    	d3.max([100,d3.max(data,function (d) { return d.miera_pulss })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([0,d3.min(data,function (d) { return d.pulss_videospeles })]),
-    	d3.max([0,d3.max(data,function (d) { return d.pulss_videospeles })])
+    	d3.min([70,d3.min(data,function (d) { return d.pulss_videospeles })]),
+    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
     	])
     .range([h,0])
 	// SVG
@@ -55,14 +55,14 @@ d3.csv(myfile, function (data) {
         d3.select(this)
           .transition()
           .duration(500)
-          .attr('r',20)
+          .attr('r',10)
           .attr('stroke-width',3)
       })
       .on('mouseout', function () {
         d3.select(this)
           .transition()
           .duration(500)
-          .attr('r',10)
+          .attr('r',5)
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
