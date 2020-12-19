@@ -165,7 +165,7 @@ d3.csv(myfile, function (data) {
     .append('title') // Tooltip
       .text(function (d) { return d.ID +
                            '\nmiera pulss: ' + (d.miera_pulss) +
-                           '\npulss videospēļu laikā: ' + (d.fiziskais_indekss) })
+                           '\nfiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
