@@ -287,11 +287,7 @@ d3.csv(myfile, function (data) {
       .attr('dy','.71em')
       .style('text-anchor','end')
       .text('fiziskās sagatavotības indekss')
-})
-
-
-
-
+	
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -349,4 +345,11 @@ plt.plot(xRe, yRe)
 xRo = np.array([82, 84])
 yRo = np.array([42.55, 83.18])
 plt.plot(xRo, yRo)
- 
+ 	
+	
+})
+
+
+
+
+
