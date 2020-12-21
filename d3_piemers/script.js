@@ -95,11 +95,12 @@ d3.csv(myfile, function (data) {
       .attr('dy','.71em')
       .style('text-anchor','end')
       .text('vidējais pulss videospēles laikā')
+	plot(x,y)
+	cor(x,y), cor.test(x,y), lm(y∼x)
 })
 
 
-myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
-//myfile = 'pulsa_dati.csv'
+
 
 d3.csv(myfile, function (data) {
   // Variables
@@ -197,8 +198,7 @@ d3.csv(myfile, function (data) {
 
 
 
-myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
-//myfile = 'pulsa_dati.csv'
+
 
 d3.csv(myfile, function (data) {
   // Variables
