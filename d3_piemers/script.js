@@ -68,7 +68,7 @@ d3.csv(myfile, function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.ID +
+      .text(function (d) { return d.Dzimums +
                            '\nmiera pulss: ' + (d.miera_pulss) +
                            '\npulss videospēļu laikā: ' + (d.pulss_videospeles) })
   // X-axis
@@ -121,8 +121,8 @@ d3.csv(myfile, function (data) {
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([70,d3.min(data,function (d) { return d.fiziskais_indekss })]),
-    	d3.max([120,d3.max(data,function (d) { return d.fiziskais_indekss })])
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
     	])
     .range([h,0])
 	// SVG
@@ -169,7 +169,7 @@ d3.csv(myfile, function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.ID +
+      .text(function (d) { return d.Dzimums +
                            '\nmiera pulss: ' + (d.miera_pulss) +
                            '\npulss videospēļu laikā: ' + (d.fiziskais_indekss) })
   // X-axis
@@ -216,13 +216,13 @@ d3.csv(myfile, function (data) {
   var xScale = d3.scale.linear()
     .domain([
     	d3.min([60,d3.min(data,function (d) { return d.pulss_videospeles })]),
-    	d3.max([85,d3.max(data,function (d) { return d.pulss_videospeles })])
+    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([70,d3.min(data,function (d) { return d.fiziskais_indekss })]),
-    	d3.max([120,d3.max(data,function (d) { return d.fiziskais_indekss })])
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
     	])
     .range([h,0])
 	// SVG
@@ -269,7 +269,7 @@ d3.csv(myfile, function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.ID +
+      .text(function (d) { return d.Dzimums +
                            '\nmiera pulss: ' + (d.pulss_videospeles) +
                            '\npulss videospēļu laikā: ' + (d.fiziskais_indekss) })
   // X-axis
