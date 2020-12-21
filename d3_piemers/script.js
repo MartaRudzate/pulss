@@ -68,7 +68,7 @@ d3.csv(myfile, function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
+      .text(function (d) { return d.ID +
                            '\nmiera pulss: ' + (d.miera_pulss) +
                            '\npulss videospēļu laikā: ' + (d.pulss_videospeles) })
   // X-axis
@@ -95,9 +95,8 @@ d3.csv(myfile, function (data) {
       .attr('dy','.71em')
       .style('text-anchor','end')
       .text('vidējais pulss videospēles laikā')
-	plot(x,y)
-	cor(x,y), cor.test(x,y), lm(y∼x)
 })
+
 
 
 
