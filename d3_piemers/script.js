@@ -69,8 +69,8 @@ d3.csv(myfile, function (data) {
       })
     .append('title') // Tooltip
       .text(function (d) { return d.Dzimums +
-                           '\nmiera pulss: ' + (d.miera_pulss) +
-                           '\npulss videospēļu laikā: ' + (d.pulss_videospeles) })
+                           '\nMiera pulss: ' + (d.miera_pulss) +
+                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -82,7 +82,7 @@ d3.csv(myfile, function (data) {
       .attr('x',w)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('miera pulss')
+      .text('Miera pulss')
   // Y-axis
   svg.append('g')
       .attr('class', 'axis')
@@ -94,7 +94,7 @@ d3.csv(myfile, function (data) {
       .attr('y',5)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('vidējais pulss videospēles laikā')
+      .text('Vidējais pulss videospēles laikā')
 })
 
 
@@ -170,8 +170,8 @@ d3.csv(myfile, function (data) {
       })
     .append('title') // Tooltip
       .text(function (d) { return d.Dzimums +
-                           '\nmiera pulss: ' + (d.miera_pulss) +
-                           '\npulss videospēļu laikā: ' + (d.fiziskais_indekss) })
+                           '\nMiera pulss: ' + (d.miera_pulss) +
+                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -183,7 +183,7 @@ d3.csv(myfile, function (data) {
       .attr('x',w)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('miera pulss')
+      .text('Miera pulss')
   // Y-axis
   svg.append('g')
       .attr('class', 'axis')
@@ -270,8 +270,8 @@ d3.csv(myfile, function (data) {
       })
     .append('title') // Tooltip
       .text(function (d) { return d.Dzimums +
-                           '\nmiera pulss: ' + (d.pulss_videospeles) +
-                           '\npulss videospēļu laikā: ' + (d.fiziskais_indekss) })
+                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) +
+                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -283,7 +283,7 @@ d3.csv(myfile, function (data) {
       .attr('x',w)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('miera pulss')
+      .text('Vidējais pulss videospēļu laikā')
   // Y-axis
   svg.append('g')
       .attr('class', 'axis')
