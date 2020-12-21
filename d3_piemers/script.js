@@ -52,7 +52,7 @@ d3.csv(myfile, function (data) {
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'b') {return "#FF0000"} else {return "#00FFFF" }})
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
       .on('mouseover', function () {
         d3.select(this)
           .transition()
@@ -153,7 +153,7 @@ d3.csv(myfile, function (data) {
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'b') {return "#FF0000"} else {return "#00FFFF" }})
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
       .on('mouseover', function () {
         d3.select(this)
           .transition()
@@ -253,7 +253,7 @@ d3.csv(myfile, function (data) {
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'b') {return "#FF0000"} else {return "#00FFFF" }})
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
       .on('mouseover', function () {
         d3.select(this)
           .transition()
