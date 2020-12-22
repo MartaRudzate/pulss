@@ -149,7 +149,7 @@ d3.csv(myfile, function (data) {
       .enter()
     .append('circle')
       .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) {concole.log('cy='+ d.fiziskais_indekss); return yScale(d.fiziskais_indekss) })
+      .attr('cy',function (d) {console.log('cy='+ d.fiziskais_indekss); return yScale(d.fiziskais_indekss) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
