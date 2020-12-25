@@ -149,7 +149,7 @@ d3.csv(myfile, function (data) {
       .enter()
     .append('circle')
       .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) {console.log('cy='+ d.fiziskais_indekss); return yScale(d.fiziskais_indekss) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
@@ -300,6 +300,12 @@ d3.csv(myfile, function (data) {
 
 
 
-
+        XYSeries series = new XYSeries("Data");
+        for (Point p : points) {
+           series.add(p.getX(), p.getY());
+        }
+        XYSeriesCollection dataset = new XYSeriesCollection(series);
+        JFreeChart chart = ChartFactory.createScatterPlot(chartName, "Mass", parameter, dataset, PlotOrientation.VERTICAL, false, true, true);
+        return chart;
 
 
