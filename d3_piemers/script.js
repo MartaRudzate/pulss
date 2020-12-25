@@ -1,311 +1,113 @@
-myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
-//myfile = 'pulsa_dati.csv'
+ import javax.swing.JTextField;
+ import java.awt.*;
+ import java.awt.event.*;
+ import javax.swing.*;
+ import java.awt.geom.*;
+ import java.util.Arrays;
+
+
+ public class GraphMaker{
+
+
+public GraphMaker(Vertex[] a )
+  {
+    JFrame frame = new JFrame();
+    String start = "Start";
+    int columns=20;
+    String end = "End";
+    JTextField startCity = new JTextField(start,columns);
+    JTextField endCity = new JTextField(end,columns);
+    JButton button = new JButton("Find Path");
+    //button.addActionListener(button);
+
+    int length = a.length;
+    Vertex current = a[0];
+    CityComponent cityPanel = new CityComponent(current);
+
+    /*for(int i=0; i < length; i++){
+        Vertex current = a[i];
+        g2.draw(new Line2D.Double(x,y,x,y));
+    }*/
+
+    JPanel panel = new JPanel();
+
+    panel.setLayout(new FlowLayout());
+
+    panel.add(startCity);
+    panel.add(endCity);
+    panel.add(button);
+
+    frame.setLayout(new BorderLayout());
+    frame.add(cityPanel,BorderLayout.CENTER);
+    frame.add(panel,BorderLayout.SOUTH);
+
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.pack();
+    frame.setVisible(true);
+
+
+}
+
+ public void actionPerformed(ActionEvent e) {
+        return;
+ }
+}
+
+import javax.swing.*;
+import java.awt.*;
+
+public class CityComponent extends JComponent {
+
+private Vertex m;
+private int x = 0;
+private int y = 0;
+
+public CityComponent(Vertex m) {
+   this.m = m;
+}
+
+public void paintComponent(Graphics g) {
+
+    Graphics2D g2 = (Graphics2D)g;
+    m.draw(g2);
+
+}
+
+} 
+
+
+import java.awt.*;
+import java.awt.geom.*;
+import java.util.*;
+
+public class Vertex{
+
+public String element;
+public Double x;
+public Double y;
+
+
+public Vertex(String city, String a, String b){
+    this.element = city;
+    this.x = Double.parseDouble(a);
+    this.y = Double.parseDouble(b);
+
+}
+
+public void draw(Graphics2D g2){
 
 
 
-d3.csv(myfile, function (data) {
-  // Variables
-  var body = d3.select('body')
-	var margin = { top: 50, right: 50, bottom: 50, left: 50 }
-	var h = 500 - margin.top - margin.bottom
-	var w = 500 - margin.left - margin.right
-	var formatPercent = d3.format('.2%')
-	// Scales
-  var colorScale = d3.scale.category20()
-  var xScale = d3.scale.linear()
-    .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
-    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss })])
-    	])
-    .range([0,w])
-  var yScale = d3.scale.linear()
-    .domain([
-    	d3.min([70,d3.min(data,function (d) { return d.pulss_videospeles })]),
-    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
-    	])
-    .range([h,0])
-	// SVG
-	var svg = body.append('svg')
-	    .attr('height',h + margin.top + margin.bottom)
-	    .attr('width',w + margin.left + margin.right)
-	  .append('g')
-	    .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
-	// X-axis
-	var xAxis = d3.svg.axis()
-	  .scale(xScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('bottom')
-  // Y-axis
-	var yAxis = d3.svg.axis()
-	  .scale(yScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('left')
-  // Circles
-  var circles = svg.selectAll('circle')
-      .data(data)
-      .enter()
-    .append('circle')
-      .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) { return yScale(d.pulss_videospeles) })
-      .attr('r','5')
-      .attr('stroke','black')
-      .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
-      .on('mouseover', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',10)
-          .attr('stroke-width',3)
-      })
-      .on('mouseout', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',5)
-          .attr('stroke-width',1)
-      })
-    .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
-                           '\nMiera pulss: ' + (d.miera_pulss) +
-                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) })
-  // X-axis
-  svg.append('g')
-      .attr('class','axis')
-      .attr('transform', 'translate(0,' + h + ')')
-      .call(xAxis)
-    .append('text') // X-axis Label
-      .attr('class','label')
-      .attr('y',-10)
-      .attr('x',w)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Miera pulss')
-  // Y-axis
-  svg.append('g')
-      .attr('class', 'axis')
-      .call(yAxis)
-    .append('text') // y-axis Label
-      .attr('class','label')
-      .attr('transform','rotate(-90)')
-      .attr('x',0)
-      .attr('y',5)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Vidējais pulss videospēles laikā')
-})
+Point2D.Double r1 = new Point2D.Double(x/10, y/10);
+Line2D.Double line = new Line2D.Double(r1,r1);
 
-
-
-
-
-
-
-
-d3.csv(myfile, function (data) {
-  // Variables
-  var body = d3.select('body')
-	var margin = { top: 50, right: 50, bottom: 50, left: 50 }
-	var h = 500 - margin.top - margin.bottom
-	var w = 500 - margin.left - margin.right
-	var formatPercent = d3.format('.2%')
-	// Scales
-  var colorScale = d3.scale.category20()
-  var xScale = d3.scale.linear()
-    .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
-    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss })])
-    	])
-    .range([0,w])
-  var yScale = d3.scale.linear()
-    .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
-    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
-    	])
-    .range([h,0])
-	// SVG
-	var svg = body.append('svg')
-	    .attr('height',h + margin.top + margin.bottom)
-	    .attr('width',w + margin.left + margin.right)
-	  .append('g')
-	    .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
-	// X-axis
-	var xAxis = d3.svg.axis()
-	  .scale(xScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('bottom')
-  // Y-axis
-	var yAxis = d3.svg.axis()
-	  .scale(yScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('left')
-  // Circles
-  var circles = svg.selectAll('circle')
-      .data(data)
-      .enter()
-    .append('circle')
-      .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
-      .attr('r','5')
-      .attr('stroke','black')
-      .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
-      .on('mouseover', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',10)
-          .attr('stroke-width',3)
-      })
-      .on('mouseout', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',5)
-          .attr('stroke-width',1)
-      })
-    .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
-                           '\nMiera pulss: ' + (d.miera_pulss) +
-                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
-  // X-axis
-  svg.append('g')
-      .attr('class','axis')
-      .attr('transform', 'translate(0,' + h + ')')
-      .call(xAxis)
-    .append('text') // X-axis Label
-      .attr('class','label')
-      .attr('y',-10)
-      .attr('x',w)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Miera pulss')
-  // Y-axis
-  svg.append('g')
-      .attr('class', 'axis')
-      .call(yAxis)
-    .append('text') // y-axis Label
-      .attr('class','label')
-      .attr('transform','rotate(-90)')
-      .attr('x',0)
-      .attr('y',5)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Fiziskās sagatavotības indekss')
-})
+  g2.draw(line);
+}
+}
 
 
 
 
 
-
-
-d3.csv(myfile, function (data) {
-  // Variables
-  var body = d3.select('body')
-	var margin = { top: 50, right: 50, bottom: 50, left: 50 }
-	var h = 500 - margin.top - margin.bottom
-	var w = 500 - margin.left - margin.right
-	var formatPercent = d3.format('.2%')
-	// Scales
-  var colorScale = d3.scale.category20()
-  var xScale = d3.scale.linear()
-    .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.pulss_videospeles })]),
-    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
-    	])
-    .range([0,w])
-  var yScale = d3.scale.linear()
-    .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
-    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
-    	])
-    .range([h,0])
-	// SVG
-	var svg = body.append('svg')
-	    .attr('height',h + margin.top + margin.bottom)
-	    .attr('width',w + margin.left + margin.right)
-	  .append('g')
-	    .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
-	// X-axis
-	var xAxis = d3.svg.axis()
-	  .scale(xScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('bottom')
-  // Y-axis
-	var yAxis = d3.svg.axis()
-	  .scale(yScale)
-	  //.tickFormat(formatPercent)
-	  .ticks(5)
-	  .orient('left')
-  // Circles
-  var circles = svg.selectAll('circle')
-      .data(data)
-      .enter()
-    .append('circle')
-      .attr('cx',function (d) { return xScale(d.pulss_videospeles) })
-      .attr('cy',function (d) { return yScale(d.fiziskais_indekss) })
-      .attr('r','5')
-      .attr('stroke','black')
-      .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
-      .on('mouseover', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',10)
-          .attr('stroke-width',3)
-      })
-      .on('mouseout', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',5)
-          .attr('stroke-width',1)
-      })
-    .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
-                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) +
-                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
-  // X-axis
-  svg.append('g')
-      .attr('class','axis')
-      .attr('transform', 'translate(0,' + h + ')')
-      .call(xAxis)
-    .append('text') // X-axis Label
-      .attr('class','label')
-      .attr('y',-10)
-      .attr('x',w)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Vidējais pulss videospēļu laikā')
-  // Y-axis
-  svg.append('g')
-      .attr('class', 'axis')
-      .call(yAxis)
-    .append('text') // y-axis Label
-      .attr('class','label')
-      .attr('transform','rotate(-90)')
-      .attr('x',0)
-      .attr('y',5)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Fiziskās sagatavotības indekss')
-})
-
-
-
-        XYSeries series = new XYSeries("Data");
-        for (Point p : points) {
-           series.add(p.getX(), p.getY());
-        }
-        XYSeriesCollection dataset = new XYSeriesCollection(series);
-        JFreeChart chart = ChartFactory.createScatterPlot(chartName, "Mass", parameter, dataset, PlotOrientation.VERTICAL, false, true, true);
-        return chart;
 
 
