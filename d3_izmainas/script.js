@@ -13,14 +13,14 @@ d3.csv(myfile, function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.bpulss })]),
-    	d3.max([90,d3.max(data,function (d) { return d.bpulss })])
+    	d3.min([60,d3.min(data,function (d) { return d.x })]),
+    	d3.max([90,d3.max(data,function (d) { return d.y })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.bindekss })]),
-    	d3.max([110,d3.max(data,function (d) { return d.bindekss })])
+    	d3.min([30,d3.min(data,function (d) { return d.x })]),
+    	d3.max([110,d3.max(data,function (d) { return d.y })])
     	])
     .range([h,0])
 	// SVG
@@ -46,8 +46,8 @@ d3.csv(myfile, function (data) {
       .data(data)
       .enter()
     .append('circle')
-      .attr('cx',function (d) { return xScale(d.bpulss) })
-      .attr('cy',function (d) {return yScale(d.bindekss) })
+      .attr('cx',function (d) { return xScale(d.x) })
+      .attr('cy',function (d) {return yScale(d.y) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
@@ -68,8 +68,8 @@ d3.csv(myfile, function (data) {
       })
     .append('title') // Tooltip
       .text(function (d) { return d.dzimums +
-                           '\nMiera pulss: ' + (d.bpulss) +
-                           '\nFiziskās sagatavotības indekss: ' + (d.bindekss) })
+                           '\nMiera pulss: ' + (d.x) +
+                           '\nFiziskās sagatavotības indekss: ' + (d.y) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
