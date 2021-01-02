@@ -314,16 +314,17 @@ d3.csv(myfile, function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
-    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss })])
+    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss,d.miera_pulss2 })]),
+    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss,d.miera_pulss2 })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
-    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss, d.fiziskais_indekss2 })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss, d.fiziskais_indekss2 })])
     	])
     .range([h,0])
+  
 	// SVG
 	var svg = body.append('svg')
 	    .attr('height',h + margin.top + margin.bottom)
