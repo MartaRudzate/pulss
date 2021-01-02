@@ -67,7 +67,7 @@ d3.csv(myfile, function (data) {
           .attr('stroke-width',1)
       })
     .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
+      .text(function (d) { return d.dzimums +
                            '\nMiera pulss: ' + (d.bpulss) +
                            '\nFiziskās sagatavotības indekss: ' + (d.bindekss) })
   // X-axis
