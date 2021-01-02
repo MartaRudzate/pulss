@@ -1,7 +1,7 @@
 //myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
 //myfile = 'pulsa_dati.csv'
 
-myfile = <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSu3Mmjd3mWkLcvEe52thMclx3EVhHVWgiHf6_E6wSRmlgpTQjx56hAhuz5fcwOz18ulusk7RY2ytH2/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+myfile = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSu3Mmjd3mWkLcvEe52thMclx3EVhHVWgiHf6_E6wSRmlgpTQjx56hAhuz5fcwOz18ulusk7RY2ytH2/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
 
 d3.csv(myfile, function (data) {
   // Variables
