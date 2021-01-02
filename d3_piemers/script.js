@@ -315,7 +315,7 @@ d3.csv(myfile, function (data) {
   var xScale = d3.scale.linear()
     .domain([
     	d3.min([60,d3.min(data,function (d) { return d.miera_pulss,d.miera_pulss2 })]),
-    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss,d.miera_pulss2 })])
+    	d3.max([90,d3.max(data,function (d) { return d.miera_pulss,d.miera_pulss2 })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
@@ -348,8 +348,8 @@ d3.csv(myfile, function (data) {
       .data(data)
       .enter()
     .append('circle')
-      .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
+      .attr('cx',function (d) { return xScale(d.miera_pulss, d.miera_pulss2) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss, d.fiziskais_indekss2) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
