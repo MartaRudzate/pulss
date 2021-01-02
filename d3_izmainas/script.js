@@ -97,8 +97,4 @@ d3.csv(myfile, function (data) {
 	
 })
 
-ARROW([[50, 70],[68,80]], $
-TARGET=mglobe, /DATA, ARROW_STYLE=1, $
-   COLOR='blue', THICK=2)
-
 }
