@@ -1,4 +1,5 @@
- myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTVlJJp4jCFbUpEqnafZ-YlI0fgGaA7l7Vde93rPu1GCy4x1NuJiNGjEPMXBxhSOIzmp3CXn_piX-LV/pub?gid=0&single=true&output=csv'
+ myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
+//myfile = 'pulsa_dati.csv'
 
 
 
@@ -13,14 +14,14 @@ d3.csv(myfile, function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.bpulss })]),
-    	d3.max([85,d3.max(data,function (d) { return d.bpulss })])
+    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
+    	d3.max([85,d3.max(data,function (d) { return d.miera_pulss })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.bindekss })]),
-    	d3.max([110,d3.max(data,function (d) { return d.bindekss })])
+    	d3.min([70,d3.min(data,function (d) { return d.pulss_videospeles })]),
+    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
     	])
     .range([h,0])
 	// SVG
@@ -46,12 +47,12 @@ d3.csv(myfile, function (data) {
       .data(data)
       .enter()
     .append('circle')
-      .attr('cx',function (d) { return xScale(d.bpulss) })
-      .attr('cy',function (d) {return yScale(d.bindekss) })
+      .attr('cx',function (d) { return xScale(d.miera_pulss) })
+      .attr('cy',function (d) { return yScale(d.pulss_videospeles) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
       .on('mouseover', function () {
         d3.select(this)
           .transition()
@@ -68,8 +69,8 @@ d3.csv(myfile, function (data) {
       })
     .append('title') // Tooltip
       .text(function (d) { return d.Dzimums +
-                           '\nMiera pulss: ' + (d.bpulss) +
-                           '\nFiziskās sagatavotības indekss: ' + (d.bindekss) })
+                           '\nMiera pulss: ' + (d.miera_pulss) +
+                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -93,8 +94,7 @@ d3.csv(myfile, function (data) {
       .attr('y',5)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('Fiziskās sagatavotības indekss')
-	
+      .text('Vidējais pulss videospēles laikā')
 })
 
-}
+
