@@ -98,18 +98,9 @@ d3.csv(myfile, function (data) {
 	
 	
 	
-      	  var margin = {top: 5, right: 5, bottom: 20, left: 20},
-	    width = 450 - margin.left - margin.right,
-	    height = 450 - margin.top - margin.bottom;
-
-	  var svg = d3.select(".chart").append("svg")
-	      .attr("width", width + margin.left + margin.right)
-	      .attr("height", height + margin.top + margin.bottom)
-	    .append("g")
-	      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	  var x = d3.scaleLinear()
-	      .range([0,width]);
+      	 
+var x = d3.scaleLinear()
+	.range([0,width]);
 
 	  var y = d3.scaleLinear()
 	      .range([height,0]);
