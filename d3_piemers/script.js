@@ -96,15 +96,155 @@ d3.csv(myfile, function (data) {
       .style('text-anchor','end')
       .text('Vidējais pulss videospēles laikā')
 	
-scatterD3(data = mtcars, x = wt, y = mpg, 
-          lines = data.frame(slope = -5.344, intercept = 37.285))
-df <- data.frame(x = c(1, 0.9, 0.7, 0.2, -0.4, -0.5),
-                 y = c(1, 0.1, -0.5, 0.5, -0.6, 0.7),
-                 type_var = c("point", rep("arrow", 5)),
-                 lab = LETTERS[6])
-scatterD3(data = df, x = x, y = y, 
-          type_var = type_var, lab = lab,
-          fixed = TRUE, xlim = c(-1.2, 1.2), ylim = c(-1.2, 1.2))	
+	
+	
+		  var margin = {top: 5, right: 5, bottom: 20, left: 20},
+	    width = 450 - margin.left - margin.right,
+	    height = 450 - margin.top - margin.bottom;
+
+	  var svg = d3.select(".chart").append("svg")
+	      .attr("width", width + margin.left + margin.right)
+	      .attr("height", height + margin.top + margin.bottom)
+	    .append("g")
+	      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	  var x = d3.scaleLinear()
+	      .range([0,width]);
+
+	  var y = d3.scaleLinear()
+	      .range([height,0]);
+
+	  var xAxis = d3.axisBottom()
+	      .scale(x);
+
+	  var yAxis = d3.axisLeft()
+	      .scale(y);
+
+	  d3.csv("data.csv", types, function(error, data){
+
+	    y.domain(d3.extent(data, function(d){ return d.pulss_videospeles}));
+	    x.domain(d3.extent(data, function(d){ return d.miera_pulss}));
+
+	    // see below for an explanation of the calcLinear function
+	    var lg = calcLinear(data, "miera_pulss", "pulss_videospeles", d3.min(data, function(d){ return d.miera_pulss}), d3.min(data, function(d){ return d.miera_pulss}));
+
+	    svg.append("line")
+	        .attr("class", "regression")
+	        .attr("x1", x(lg.ptA.x))
+	        .attr("y1", y(lg.ptA.y))
+	        .attr("x2", x(lg.ptB.x))
+	        .attr("y2", y(lg.ptB.y));
+
+	    svg.append("g")
+	        .attr("class", "x axis")
+	        .attr("transform", "translate(0," + height + ")")
+	        .call(xAxis)
+
+	    svg.append("g")
+	        .attr("class", "y axis")
+	        .call(yAxis);
+
+	    svg.selectAll(".point")
+	        .data(data)
+	      .enter().append("circle")
+	        .attr("class", "point")
+	        .attr("r", 3)
+	        .attr("cy", function(d){ return y(d.pulss_videospeles); })
+	        .attr("cx", function(d){ return x(d.miera_pulss); });
+
+	  });
+
+	  function types(d){
+	    d.x = +d.x;
+	    d.y = +d.y;
+
+	    return d;
+	  }
+
+    // Calculate a linear regression from the data
+
+		// Takes 5 parameters:
+    // (1) Your data
+    // (2) The column of data plotted on your x-axis
+    // (3) The column of data plotted on your y-axis
+    // (4) The minimum value of your x-axis
+    // (5) The minimum value of your y-axis
+
+    // Returns an object with two points, where each point is an object with an x and y coordinate
+
+    function calcLinear(data, miera_pulss, pulss_videospeles, minX, minY){
+      /////////
+      //SLOPE//
+      /////////
+
+      // Let n = the number of data points
+      var n = data.length;
+
+      // Get just the points
+      var pts = [];
+      data.forEach(function(d,i){
+        var obj = {};
+        obj.miera_pulss = d[x];
+        obj.pulss_videospeles = d[y];
+        obj.mult = obj.x*obj.y;
+        pts.push(obj);
+      });
+
+      // Let a equal n times the summation of all x-values multiplied by their corresponding y-values
+      // Let b equal the sum of all x-values times the sum of all y-values
+      // Let c equal n times the sum of all squared x-values
+      // Let d equal the squared sum of all x-values
+      var sum = 0;
+      var xSum = 0;
+      var ySum = 0;
+      var sumSq = 0;
+      pts.forEach(function(pt){
+        sum = sum + pt.mult;
+        xSum = xSum + pt.x;
+        ySum = ySum + pt.y;
+        sumSq = sumSq + (pt.x * pt.x);
+      });
+      var a = sum * n;
+      var b = xSum * ySum;
+      var c = sumSq * n;
+      var d = xSum * xSum;
+
+      // Plug the values that you calculated for a, b, c, and d into the following equation to calculate the slope
+      // slope = m = (a - b) / (c - d)
+      var m = (a - b) / (c - d);
+
+      /////////////
+      //INTERCEPT//
+      /////////////
+
+      // Let e equal the sum of all y-values
+      var e = ySum;
+
+      // Let f equal the slope times the sum of all x-values
+      var f = m * xSum;
+
+      // Plug the values you have calculated for e and f into the following equation for the y-intercept
+      // y-intercept = b = (e - f) / n
+      var b = (e - f) / n;
+
+			// Print the equation below the chart
+			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+
+      // return an object of two points
+      // each point is an object with an x and y coordinate
+      return {
+        ptA : {
+          x: minX,
+          y: m * minX + b
+        },
+        ptB : {
+          y: minY,
+          x: (minY - b) / m
+        }
+      }
+
+    }
 })
 
 
