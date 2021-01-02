@@ -320,8 +320,8 @@ d3.csv(myfile, function (data) {
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([70,d3.min(data,function (d) { return d.pulss_videospeles })]),
-    	d3.max([120,d3.max(data,function (d) { return d.pulss_videospeles })])
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
     	])
     .range([h,0])
 	// SVG
@@ -348,7 +348,7 @@ d3.csv(myfile, function (data) {
       .enter()
     .append('circle')
       .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) { return yScale(d.pulss_videospeles) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
@@ -370,7 +370,7 @@ d3.csv(myfile, function (data) {
     .append('title') // Tooltip
       .text(function (d) { return d.Dzimums +
                            '\nMiera pulss: ' + (d.miera_pulss) +
-                           '\nVidējais pulss videospēļu laikā: ' + (d.pulss_videospeles) })
+                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
@@ -394,6 +394,6 @@ d3.csv(myfile, function (data) {
       .attr('y',5)
       .attr('dy','.71em')
       .style('text-anchor','end')
-      .text('Vidējais pulss videospēles laikā')
+      .text('Fiziskās sagatavotības indekss')
 })
 
