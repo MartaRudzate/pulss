@@ -97,10 +97,8 @@ d3.csv(myfile, function (data) {
       .text('Vidējais pulss videospēles laikā')
 	
 	
-	
-      	 
-var x = d3.scaleLinear()
-	.range([0,width]);
+	var x = d3.scaleLinear()
+	      .range([0,width]);
 
 	  var y = d3.scaleLinear()
 	      .range([height,0]);
