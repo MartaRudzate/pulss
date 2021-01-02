@@ -96,8 +96,8 @@ d3.csv(myfile, function (data) {
       .style('text-anchor','end')
       .text('Vidējais pulss videospēles laikā')
 	
-lines = data.frame(slope = -5.344, intercept = 37.285)	
-	
+scatterD3(data = mtcars, x = wt, y = mpg, 
+          lines = data.frame(slope = -5.344, intercept = 37.285))
 })
 
 
