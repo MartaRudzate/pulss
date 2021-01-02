@@ -48,29 +48,79 @@
     	d3.max([120,d3.max(data,function (d) { return d.y })])
     	])
     .range([h,0])
+  // SVG
+	var svg = body.append('svg')
+	    .attr('height',h + margin.top + margin.bottom)
+	    .attr('width',w + margin.left + margin.right)
+	  .append('g')
+	    .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
+	// X-axis
+	var xAxis = d3.svg.axis()
+	  .scale(xScale)
+	  //.tickFormat(formatPercent)
+	  .ticks(5)
+	  .orient('bottom')
+  // Y-axis
+	var yAxis = d3.svg.axis()
+	  .scale(yScale)
+	  //.tickFormat(formatPercent)
+	  .ticks(5)
+	  .orient('left')
+  // Circles
+  var circles = svg.selectAll('circle')
+      .data(data)
+      .enter()
+    .append('circle')
+      .attr('cx',function (d) { return xScale(d.x) })
+      .attr('cy',function (d) { return yScale(d.y) })
+      .attr('r','5')
+      .attr('stroke','black')
+      .attr('stroke-width',1)
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
+      .on('mouseover', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',10)
+          .attr('stroke-width',3)
+      })
+      .on('mouseout', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',5)
+          .attr('stroke-width',1)
+      })
+    .append('title') // Tooltip
+      .text(function (d) { return d.Dzimums +
+                           '\nMiera pulss: ' + (d.x) +
+                           '\nVidējais pulss videospēļu laikā: ' + (d.y) })
+  // X-axis
+  svg.append('g')
+      .attr('class','axis')
+      .attr('transform', 'translate(0,' + h + ')')
+      .call(xAxis)
+    .append('text') // X-axis Label
+      .attr('class','label')
+      .attr('y',-10)
+      .attr('x',w)
+      .attr('dy','.71em')
+      .style('text-anchor','end')
+      .text('Miera pulss')
+  // Y-axis
+  svg.append('g')
+      .attr('class', 'axis')
+      .call(yAxis)
+    .append('text') // y-axis Label
+      .attr('class','label')
+      .attr('transform','rotate(-90)')
+      .attr('x',0)
+      .attr('y',5)
+      .attr('dy','.71em')
+      .style('text-anchor','end')
+      .text('Vidējais pulss videospēles laikā')
   
-	  var svg = d3.select(".chart").append("svg")
-	      .attr("width", width + margin.left + margin.right)
-	      .attr("height", height + margin.top + margin.bottom)
-	    .append("g")
-	      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	  var x = d3.scaleLinear()
-	      .range([0,width]);
-
-	  var y = d3.scaleLinear()
-	      .range([height,0]);
-
-	  var xAxis = d3.axisBottom()
-	      .scale(x);
-
-	  var yAxis = d3.axisLeft()
-	      .scale(y);
-
-	  d3.csv("data.csv", types, function(error, data){
-
-	    y.domain(d3.extent(data, function(d){ return d.y}));
-	    x.domain(d3.extent(data, function(d){ return d.x}));
 
 	    // see below for an explanation of the calcLinear function
 	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.x}), d3.min(data, function(d){ return d.x}));
