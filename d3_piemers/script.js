@@ -98,6 +98,13 @@ d3.csv(myfile, function (data) {
 	
 scatterD3(data = mtcars, x = wt, y = mpg, 
           lines = data.frame(slope = -5.344, intercept = 37.285))
+df <- data.frame(x = c(1, 0.9, 0.7, 0.2, -0.4, -0.5),
+                 y = c(1, 0.1, -0.5, 0.5, -0.6, 0.7),
+                 type_var = c("point", rep("arrow", 5)),
+                 lab = LETTERS[1:6])
+scatterD3(data = df, x = x, y = y, 
+          type_var = type_var, lab = lab,
+          fixed = TRUE, xlim = c(-1.2, 1.2), ylim = c(-1.2, 1.2))	
 })
 
 
