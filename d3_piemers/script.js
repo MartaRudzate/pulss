@@ -314,14 +314,29 @@ d3.csv(myfile, function (data) {
   var colorScale = d3.scale.category20()
   var xScale = d3.scale.linear()
     .domain([
-    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss,d.miera_pulss2 })]),
-    	d3.max([90,d3.max(data,function (d) { return d.miera_pulss,d.miera_pulss2 })])
+    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss })]),
+    	d3.max([90,d3.max(data,function (d) { return d.miera_pulss })])
     	])
     .range([0,w])
   var yScale = d3.scale.linear()
     .domain([
-    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss, d.fiziskais_indekss2 })]),
-    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss, d.fiziskais_indekss2 })])
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss })])
+    	])
+    .range([h,0])
+  
+  // Scales
+  var colorScale = d3.scale.category20()
+  var xScale = d3.scale.linear()
+    .domain([
+    	d3.min([60,d3.min(data,function (d) { return d.miera_pulss2 })]),
+    	d3.max([90,d3.max(data,function (d) { return d.miera_pulss2 })])
+    	])
+    .range([0,w])
+  var yScale = d3.scale.linear()
+    .domain([
+    	d3.min([30,d3.min(data,function (d) { return d.fiziskais_indekss2 })]),
+    	d3.max([110,d3.max(data,function (d) { return d.fiziskais_indekss2 })])
     	])
     .range([h,0])
   
@@ -348,8 +363,8 @@ d3.csv(myfile, function (data) {
       .data(data)
       .enter()
     .append('circle')
-      .attr('cx',function (d) { return xScale(d.miera_pulss, d.miera_pulss2) })
-      .attr('cy',function (d) {return yScale(d.fiziskais_indekss, d.fiziskais_indekss2) })
+      .attr('cx',function (d) { return xScale(d.miera_pulss) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
       .attr('r','5')
       .attr('stroke','black')
       .attr('stroke-width',1)
@@ -372,6 +387,36 @@ d3.csv(myfile, function (data) {
       .text(function (d) { return d.Dzimums +
                            '\nMiera pulss: ' + (d.miera_pulss) +
                            '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
+  
+  // Circles
+  var circles = svg.selectAll('circle')
+      .data(data)
+      .enter()
+    .append('circle')
+      .attr('cx',function (d) { return xScale(d.miera_pulss2) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss2) })
+      .attr('r','5')
+      .attr('stroke','black')
+      .attr('stroke-width',1)
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
+      .on('mouseover', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',10)
+          .attr('stroke-width',3)
+      })
+      .on('mouseout', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',5)
+          .attr('stroke-width',1)
+      })
+    .append('title') // Tooltip
+      .text(function (d) { return d.Dzimums +
+                           '\nMiera pulss: ' + (d.miera_pulss2) +
+                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss2) })
   // X-axis
   svg.append('g')
       .attr('class','axis')
