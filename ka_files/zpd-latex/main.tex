@@ -4,6 +4,17 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage{subcaption}
+\usepackage{section}
+\usepackage{titlesec}
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{\thesubsection}{1em}{\MakeUppercase}
+\titleformat{\subsection}[block]{\large\bfseries\filcenter}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\large\bfseries\filcenter}{\thesubsection}{1em}{}
+\usepackage{blindtext}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0em}
@@ -22,6 +33,7 @@
  bottom=25mm,
  }
  \usepackage{times}
+ 
 \begin{document}
 
 \begin{titlepage}
@@ -45,7 +57,10 @@
 \Large \textbf{Darba autore:} Marta Rudzāte 
 
 \Large \textbf{Darba vadītājs:} Aivars Kaupužs
+
+\Large \textbf{Darba konsultants:} Kalvis Apsītis
 \end{flushright}
+
 
     \begin{center}
 
@@ -60,42 +75,46 @@
 
 \begin{titlepage}
 \begin{center}
-    {\large \bf ANOTĀCIJA}
+    {\Large \bf ANOTĀCIJA}
 \end{center}
 
 Tika izpētīti sirds ritmu ietekmējošie faktori. Veikts eksperiments, lai noskaidrotu mijsakarības starp sirds ritmu ietekmējošiem faktoriem: fizisko aktivitāti un stresu. Kā arī ir veikts otrs eksperiments karantīnas laikā, no kura tika noskaidrots, vai ir izmainījies sirds ritms miera stāvoklī un fiziskā sagatavotība, skatoties pēc sirds spējas atgriezties normālā tempā pēc noteiktas fiziskas slodzes. Mērķis ir noskaidrot galvenos sirds ritmu ietekmējošos faktorus, to mijsakarības un izmaiņas karantīnas laikā.\par
 Teorijā ir minēts, ka cilvēkiem ar labāku fizisko sagatavotību ir zemāks miera stāvokļa pulss, kas arī tika apstiprināts eksperimenta laikā. Tika noskaidrots, ka fiziski spēcīgāki cilvēki tiek vieglāk galā ar stresu, nekā cilvēki ar sliktāku fizisko sagatavotību. Salīdzinot pirmajā un otrajā eksperimentā iegūtos datus, tika noskaidrots, ka karantīnas laikā vidēji cilvēku fiziskās sagatavotības līmenis samazinās. 
 
+Atslēgvārdi: sirds ritms, fiziskā aktivitāte, stress.
 \vspace{4cm}
 
 \begin{center}
-    {\large \bf ABSTRACT}
+    {\Large \bf ABSTRACT}
 \end{center}
 
-Factors that affect heart rhythm had been researched. An experiment was made to get to know the interrelationships between the heart rhythm affecting factors: physical activity and stress. A second experiment was made in quarantine to get to know if there are some changes in normal resting pulse and physical ability, looking at the heart's ability to return to a normal rhythm after specified physical activity. The goal is to find out the main factors influencing the heart rhythm, their interrelationships, and changes during the quarantine.\par
-The theory is that physically stronger people have a lower resting heart rate, which was also confirmed during the experiment. It was found that physically stronger people cope with stress more easily than physically weaker people. Comparing the data of the two experiments, it was found that during quarantine, the average level of physical fitness of people decreases.
-
-\end{titlepage}
-
-\newpage
-\begin{titlepage}
-
-\section*{\centering\textbf{SATURS}}
-\def\contentsname{\empty}
-\tableofcontents
-
-
+Factors affecting heart rhythm were studied. An experiment was performed to study the interrelationships between the factors influencing the heart rate: physical activity and stress. The second experiment was performed during quarantine in order to find out whether a normal resting heart rate and physical ability have changed taking into consideration and studying heart's ability to return to a normal rhythm after specific physical activities. The aim is to find out the main factors influencing the heart rhythm, their interrelationships, and changes during quarantine.\par
+The theory states that physically stronger people have a lower resting heart rate, which was also confirmed during the experiment. It was found that physically stronger people cope with stress more easily than physically weaker people. Comparing the data of two experiments, it was discovered that the average level of physical fitness of people has decreased during quarantine.
+\par
+Keywords: heart rate, physical activity, stress.
 
 \end{titlepage}
 
 \newpage
 \begin{titlepage}
 \begin{center}
+{\Large\centering\textbf{SATURS}}
+\end{center}
+\def\contentsname{\empty}
+\tableofcontents
+
+\end{titlepage}
+
+
+\newpage
+\begin{titlepage}
+
+\begin{center}
 \addcontentsline{toc}{section}{IEVADS}
-{\large \bf IEVADS}
+{\Large \bf IEVADS}
 \end{center}
 
-Cilvēka pulss, sirds ritms katru dienu vairākas reizes izmainās. To ietekmē vairāki faktori - gan fizioloģiskie, gan psihoemocionālie. Sirds ritms mainās tāpēc, ka saskaramies ar fizisko aktivitāti, uztraukumu, bailēm, miegu, veselības izmaiņām un citiem faktoriem. Tā kā visas aktivitātes un notikumi ietekmē sirds ritmu, es izvēlējos izpētīt dažus no šiem faktoriem. Kā arī šobrīd, vīrusa ietekmes dēļ, ir mainījies visu cilvēku dzīvesveids. Vēlos noskaidrot, vai var redzēt karantīnas sekas cilvēku fiziskajā stāvoklī.
+Cilvēka pulss, sirds ritms katru dienu vairākas reizes izmainās. To ietekmē vairāki faktori — gan fizioloģiskie, gan psihoemocionālie. Sirds ritms mainās tāpēc, ka saskaramies ar fizisko aktivitāti, uztraukumu, bailēm, miegu, veselības izmaiņām un citiem faktoriem. Tā kā visas aktivitātes un notikumi ietekmē sirds ritmu, es izvēlējos izpētīt dažus no šiem faktoriem. Kā arī šobrīd, vīrusa ietekmes dēļ, ir mainījies visu cilvēku dzīvesveids. Vēlos noskaidrot, vai var redzēt karantīnas sekas cilvēku fiziskajā stāvoklī.
 
 \textbf{Darba mērķis:} Izpētīt, kādi fizioloģiskie un psihoemocionālie faktori ir saistīti ar sirds ritma izmaiņām, noskaidrot, kādas ir cilvēku fiziskā stāvokļa izmaiņas karantīnas laikā. \par
 \textbf{Darba uzdevumi:} \par
@@ -108,49 +127,42 @@ Cilvēka pulss, sirds ritms katru dienu vairākas reizes izmainās. To ietekmē 
 \end{titlepage}
 \newpage
 
+\newpage
+
 \pagestyle{fancy}
 \fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
 \rfoot{\thepage}
 \setcounter{page}{5}
 
-\begin{center}
-\addcontentsline{toc}{section}{1. LITERATŪRAS APSKATS}
-{\large \bf 1. LITERATŪRAS APSKATS}
-\end{center}
+%\begin{center}
+%\addcontentsline{toc}{section}{1. LITERATŪRAS APSKATS}
+%{\Large \bf 1. LITERATŪRAS APSKATS}
+%\end{center}
+\section{LITERATŪRAS APSKATS}
 
-XXX
-Sirds visu laiku pieskaņojas cilvēka darbībām – gulēšanai, skriešanai, sēdēšanai un daudzām citām darbībām, kā arī sirds pieskaņojas dažādām emocijām – stresam, bēdām, pārsteigumam un daudzām citām emocijām. Sirds ritma izmaiņas regulē speciāli regulācijas mehānismi, kuri ir gan sirdī, gan nervu sistēmā. Spēcīgi redzes, ožas, dzirdes un arī psihoemocionāli pārdzīvojumi rada sirdsdarbības pārmaiņas. 
+Sirds visu laiku pieskaņojas cilvēka darbībām --- gulēšanai, skriešanai, sēdēšanai un dau\-dzām citām darbībām, kā arī sirds pieskaņojas dažādām emocijām — stresam, bēdām, pārstei\-gumam un daudzām citām emocijām. Sirds ritma izmaiņas regulē speciāli regulācijas mehānis\-mi, kuri ir gan sirdī, gan nervu sistēmā. Spēcīgi redzes, ožas, dzirdes un arī psihoemocionāli pārdzīvojumi rada sirdsdarbības pārmaiņas. 
 
-\begin{center}
-\addcontentsline{toc}{subsection}{1.1. Kā darbojas sirds un asins cirkulācija?}
-{\bf 1.1.Kā darbojas sirds un asins cirkulācija?}
-\end{center}
-	 
+%\begin{center}
+%\addcontentsline{toc}{subsection}{1.1. Sirds darbība}
+%{\large\bf 1.1. Sirds darbība}
+%\end{center}
+\subsection{Sirds darbība}
 
-Sirds ir viens no svarīgākajiem orgāniem cilvēkā. Sirds darbojas kā sūknis, kas dzen, virza asinis pa visu organismu, uzturot normālu asinsriti, apgādā visus organisma audus un orgānus ar skābekli un barības vielām. Sirdij ir divas puses – labā un kreisā. Tās ir sadalītas vēl divās daļās – priekškambaris un kambaris. Tie nepārtraukti saraujas un atslābs, tieši tas nodrošina nepārtrauktu asiņu pulsāciju. Sirdij ir muskulis, kuru sauc par miokardu. Kad miokarda saraujas, to sauc par sistoli, kamera iztukšojas no asinīm, bet, kad tā atslābs – diastole, kameras uzpildās ar asinīm. Kad asinis tiek izgrūstas (sistole), tad ir maksimālais asinsspiediens, bet, kad ir asins uzpildīšanās (diastole), asinsspiediens nokrīt līdz minimumam. Šo posmu, kad miokarda saraujas un atslābst, sauc par ciklu. Vidēji cikls ilgst aptuveni 0,8 sekundes. 
-
-\begin{center}
-\addcontentsline{toc}{subsection}{1.2. Artēriju pulss}
-{\bf 1.2. Artēriju pulss}
-\end{center}
-
-Aortā asiņu ieplūšanas laikā aortas sienas tiek iestieptas. Šis sienu iestiepums rada pulsa vilni, kas, izplatoties pa artērijām, rada artēriju pulsu, kas sastāv no ritmiskām svārstībām. Šīs svārstības var sataustīt pie rokas vai kakla artērijas, jo šajās vietās artērijas ir vistuvāk ādai. Parasti pulsu nosaka pēc svārstību daudzuma vienā minūtē, ar ko noskaidro cik bieži saraujas sirds. Pēc artēriju pulsa var arī noteikt, vai sirds sitas ritmiski, vai arī ir aritmija. \par
-Artēriju pulsu var reģistrēt ar sfigmogrammām, kas ir pulsa pieraksta līknes, kuras  var iegūt izmērot artēriju pulsu ar sfigmogrāfu. Sfigmogrammas izmanto, lai noteiktu pulsa viļņa ātrumu. Lai to noskaidrotu aortā, skatās pēc miegartērijas un ciskas artērijas sfigmogrammām, bet, lai noteiktu to rokas artērijām, skatās pēc miegartērijas un spieķakaula artērijas sfigmogrammām. Artēriju pulss aortā, roku artērijās un kāju artērijās var būt dažāds. Parasti jauniem cilvēkiem artēriju pulsa ātrums aortā ir 5 m/s, roku artērijās aptuveni 7 m/s, kāju artērijās aptuveni 8 m/s. Sfigmogrammas otra līkne attiecas uz elpošanas ritmu. Asinsspiediens pazeminās ieelpas laikā, bet paaugstinās izelpas laikā. Pulsa viļņa ātrums mainās atkarībā no artēriju sienu stingrības. Jo asinsvadi ir šaurāki, jo pulss paātrinās, asinsspiediens paaugstinās. Jo asinsvadi ir platāki, elastīgāki, jo pulss ir lēnāks, asinsspiediens samazinās. Uz vecumu parasti artērijas sašaurinās, tāpēc pulss paātrinās un asinsspiediens paaugstinās. Kā arī aterosklerozes slimniekiem paātrinās pulss, jo samazinās asinsvadu elastība. 
-(Valtneris, 2004) (Līga Aberberga-Augškalne, Olga Koroļova, 2007)
+Sirds ir viens no svarīgākajiem orgāniem cilvēkā. Sirds darbojas kā sūknis, kas dzen, virza asinis pa visu organismu, uzturot normālu asinsriti, apgādā visus organisma audus un orgānus ar skābekli un barības vielām. Sirdij ir divas puses — labā un kreisā. Tās ir sadalītas vēl divās daļās — priekškambaris un kambaris. Tie nepārtraukti saraujas un atslābs, tieši tas nodrošina nepārtrauktu asiņu pulsāciju. Sirdij ir muskulis, kuru sauc par miokardu. Kad miokarda saraujas, to sauc par sistoli, kamera iztukšojas no asinīm, bet, kad tā atslābs — diastole, kameras uzpildās ar asinīm. Kad asinis tiek izgrūstas (sistole), tad ir maksimālais asinsspiediens, bet, kad ir asins uzpildīšanās (diastole), asinsspiediens nokrīt līdz minimumam. Šo posmu, kad miokarda saraujas un atslābst, sauc par ciklu. Vidēji cikls ilgst aptuveni 0,8 sekundes.\par
+Aortā asiņu ieplūšanas laikā aortas sienas tiek iestieptas. Šis sienu iestiepums rada pulsa vilni, kas, izplatoties pa artērijām, rada artēriju pulsu, kas sastāv no ritmiskām svārstībām. Šīs svārstības var sataustīt pie rokas vai kakla artērijas, jo šajās vietās artērijas ir vistuvāk ādai. Parasti pulsu nosaka pēc svārstību daudzuma vienā minūtē, ar ko noskaidro, cik bieži saraujas sirds. Pēc artēriju pulsa var arī noteikt, vai sirds sitas ritmiski vai arī ir aritmija. \par
+Pulsa viļņa ātrums mainās atkarībā no artēriju sienu stingrības. Jo asinsvadi ir šaurāki, jo pulss paātrinās, asinsspiediens paaugstinās. Jo asinsvadi ir platāki, elastīgāki, jo pulss ir lēnāks, asinsspiediens samazinās. Uz vecumu parasti artērijas sašaurinās, tāpēc pulss paātrinās un asinsspiediens paaugstinās. Kā arī aterosklerozes slimniekiem paātrinās pulss, jo samazinās asinsvadu elastība. 
+(Valtneris, 2004) (Līga Aberberga — Augškalne, Olga Koroļova, 2007)
 
 
 
-\begin{center}
-\addcontentsline{toc}{subsection}{1.3. Sirds ritma izmaiņas pie fiziskas aktivitātes}
-{\bf 1.3. Sirds ritma izmaiņas pie fiziskas aktivitātes}
-\end{center}
+%\begin{center}
+%\addcontentsline{toc}{subsection}{1.2. Sirds ritmu ietekmējošie faktori}
+%{\large\bf 1.2. Sirds ritmu ietekmējošie faktori}
+%\end{center}
+\subsection{Sirds ritmu ietekmējošie faktori}
 
-Cilvēkam normāls pulss miera stāvoklī ir aptuveni 60-80 sitieni minūtē. Cilvēkiem, kas regulāri sporto, nodarbojas ar fizisku aktivitāti, miera stāvoklī var būt zemāks pulss, aptuveni 50, bet profesionāliem sportistiem pulss miera stāvoklī var būt pat 40 sitieni. Sportistiem ir zemāks pulss, jo viņu sirds muskulis ir veselīgs un stiprs kas nozīmē, ka sirds var lēnāk strādāt, lai uzturētu normālu asins cirkulāciju visā ķermenī. Cilvēkiem, kuriem nav spēcīga sirds muskuļa, viņu sirdij ir jāpieliek lielāks darbs, lai uzturētu normālu asins plūsmu, kā rezultātā sirdsdarbība ir ātrāka nekā parasti. Par paātrinātu sirdsdarbības ātrumu tiek uzskatīts pulss, kas ir vairāk par 80 sitieni minūtē miera stāvoklī. Tādā gadījumā ir jānoskaidro tam cēlonis un jāmēģina to labot. (Meterniha, 2010)
-
-\begin{center}
-\addcontentsline{toc}{subsubsection}{1.3.1. Karvonena formula}
-{\bf 1.3.1. Karvonena formula}
-\end{center}
+Cilvēkam normāls pulss miera stāvoklī ir aptuveni 60 — 80 sitieni minūtē. Cilvēkiem, kas regulāri sporto, nodarbojas ar fizisku aktivitāti, miera stāvoklī var būt zemāks pulss, aptuveni 50, bet profesionāliem sportistiem pulss miera stāvoklī var būt pat 40 sitieni. Sportistiem ir zemāks pulss, jo viņu sirds muskulis ir veselīgs un stiprs, kas nozīmē, ka sirds var lēnāk strādāt, lai uzturētu normālu asins cirkulāciju visā ķermenī. Cilvēkiem, kuriem nav spēcīga sirds muskuļa, viņu sirdij ir jāpieliek lielāks darbs, lai uzturētu normālu asins plūsmu, kā rezultātā sirdsdarbība ir ātrāka, nekā parasti. Par paātrinātu sirdsdarbības ātrumu tiek uzskatīts pulss, kas ir vairāk par 80 sitieni minūtē miera stāvoklī. Tādā gadījumā ir jānoskaidro tam cēlonis un jāmēģina to labot. (Meterniha, 2010)
 
 Lai uzzinātu, kādam jābūt pulsam sportošanas laikā, var izmantot Karvonena formulu: 
 $$\text{Vēlamais\ pulss} = ((\text{maksimālais\ pulss})  - (\text{miera\ stāvokļa\ pulss})) \cdot 
@@ -159,11 +171,11 @@ $$ + (\text{miera\ stāvokļa\ pulss}).$$
 \begin{itemize}
     \item Maksimālo pulsu, kādu sirds var izturēt, var aprēķināt, no 220 atņemot savu vecumu gados. 
     \item 	Miera stāvokļa pulsu var noteikt, kad jau pāris minūtes cilvēks ir mierīgi sēdējis, saskaitot, cik sitienus var just vienā minūtē, turot roku pie vēnas.
-    \item Lai zinātu ar kādu skaitli $(0,6; 0,7; 0,8)$ reizināt, jāizvēlas, kādā intensitātē vēlas sportot.
+    \item Lai zinātu ar kādu skaitli $(0,6;\  0,7;\  0,8)$ reizināt, jāizvēlas, kādā intensitātē vēlas sportot.
 \end{itemize}
 	\begin{enumerate}
-	    \item Ja mērķis treniņu laikā ir sadedzināt taukus, jāsasniedz 60\% -- 70\% no pulsa rezerves (maksimālais pulss - miera stāvokļa pulss), tāpēc, lai noteiktu, kādas pulsa robežās jāieturas, pulsa rezerve ir jāreizina ar 0,6 un 0,7.
-	    \item Ja mērķis treniņu laikā ir stiprināt sirdi un asinsvadu sistēmu, jāsasniedz 70\% – 80\% no pulsa rezerves, tāpēc pulsa rezerve ir jāreizina ar 0,7 un 0,8.
+	    \item Ja mērķis treniņu laikā ir sadedzināt taukus, jāsasniedz 60\% — 70\% no pulsa rezer\-ves (maksimālais pulss - miera stāvokļa pulss), tāpēc, lai noteiktu, kādas pulsa robežās jāieturas, pulsa rezerve ir jāreizina ar 0,6 un 0,7.
+	    \item Ja mērķis treniņu laikā ir stiprināt sirdi un asinsvadu sistēmu, jāsasniedz 70\% –- 80\% no pulsa rezerves, tāpēc pulsa rezerve ir jāreizina ar 0,7 un 0,8.
 	\end{enumerate}
 	
 Piemēram, ja vecums ir 20 gadi un miera stāvoklī pulss ir 70, tad:\par
@@ -185,44 +197,26 @@ Ir iegūts, ka pulsa rezerve ir 130. Tagad var aprēķināt vēlamo pulsu priek�
 Tātad, ja treniņa mērķis ir sadedzināt taukus, tad treniņa laikā pulsam jābūt robežās no 148 līdz 161. Ja treniņa mērķis ir sirds trenēšana, tad sportošanas laikā pulsam vajadzētu būt robežās no 161 līdz 174. (Bet jāatceras, ka katram cilvēkam sirds darbojas savādāk un šī formula ir noderīga tikai vairumam cilvēku. Šī formula var nebūt piemērota cilvēkiem ar veselības problēmām.)\par
 (Upmanis, 2005)
 
-\begin{center}
-\addcontentsline{toc}{subsubsection}{1.3.2. Fiziskās aktivitātes kontrolēšana}
-{\bf 1.3.2. Fiziskās aktivitātes kontrolēšana}
-\end{center}
-
-Pēc Daces Augstkalnes datiem par fiziskās aktivitātes ietekmi uz cilvēka veselību, fiziskā aktivitāte uzlabo sirds veselību un tās funkcionālas spējas, uzlabo asinsriti un asinsvadus. Kā arī fiziskā aktivitāte palīdz stabilizēt nervu sistēmu, palīdz tikt galā ar stresu un depresiju. Pēc Tatjanas Īlenas pētījumiem fiziskā aktivitāte var gan palīdzēt, gan tieši otrādi, ja to dara nepareizi. Piemēram, pusaudža vecumā liekas, ka ir daudz spēka, bet tieši tas var novest pie sliktām sekām, jo pusaudža periodā notiek audu pastiprināta augšana un tas rada papildu slodzi sirdij. Arī sirds vēl aug, un tās augšanas temps var atpalikt. Pusaudžiem raksturīga arī asinsvadu augšanas atpalicība, tāpēc bieži ir paaugstināts asinsspiediens un traucēts sirdsdarbības ritms. Straujās augšanas rezultātā atpaliek muskuļu attīstība un var novērot pusaudžu kustību koordinācijas traucējumus, kā kustību neveiklību un stūrainību. Pusaudzim ir nepieciešamas fiziskās aktivitātes, bet viņiem ir jāizvairās no pārslodzes.(Augstkalne, 2007) (Īlena, 2019)\par
+Pēc Daces Augstkalnes datiem par fiziskās aktivitātes ietekmi uz cilvēka veselību, fiziskā aktivitāte uzlabo sirds veselību un tās funkcionālas spējas, uzlabo asinsriti un asinsvadus. Kā arī fiziskā aktivitāte palīdz stabilizēt nervu sistēmu, palīdz tikt galā ar stresu un depresiju. Pēc Tatjanas Īlenas pētījumiem, fiziskā aktivitāte var gan palīdzēt, gan tieši otrādi, ja to dara nepareizi. Piemēram, pusaudža vecumā liekas, ka ir daudz spēka, bet tieši tas var novest pie sliktām sekām, jo pusaudža periodā notiek audu pastiprināta augšana un tas rada papildu slodzi sirdij. Arī sirds vēl aug, un tās augšanas temps var atpalikt. Pusaudžiem raksturīga arī asins\-vadu augšanas atpalicība, tāpēc bieži ir paaugstināts asinsspiediens un traucēts sirdsdarbības ritms. Straujās augšanas rezultātā atpaliek muskuļu attīstība un var novērot pusaudžu kustību koordinācijas traucējumus, kā kustību neveiklību un stūrainību. Pusaudzim ir nepieciešamas fiziskās aktivitātes, bet viņiem ir jāizvairās no pārslodzes.(Augstkalne, 2007) (Īlena, 2019)\par
 Nepiemērotai slodzei sportošanas laikā var būt arī citas sekas, kā sirds mazspēja, nespēks, nogurums, sirdsklauves, smaguma sajūta un spiedošas sajūtas sirdī, muskuļu vājums, slikta dūša, sirds toņu dobjums, tahikardija, asinsspiediena krišana, iespējams samaņas zudums. Šādas sekas var rasties akūtas pārslodzes ietekmē.\par
-“Hroniskai pārslodzei raksturīgi atsevišķu orgānu, biežāk tieši sirds asinsvadu sistēmas, bojājuma aina. Jāuzsver, ka sākumā sportista vispārējais stāvoklis un rezultāti var nepasliktināties, nereti izmaiņas var konstatēt tikai instrumentālo izmeklējumu laikā.” 
+``Hroniskai pārslodzei raksturīgi atsevišķu orgānu, biežāk tieši sirds asinsvadu sistēmas, bojājuma aina. Jāuzsver, ka sākumā sportista vispārējais stāvoklis un rezultāti var nepasliktināties, nereti izmaiņas var konstatēt tikai instrumentālo izmeklējumu laikā.''
 (Augstkalne, 2007)
 
-\begin{center}
-\addcontentsline{toc}{subsection}{1.4. Sirdsdarbība miegā}
-{\bf 1.4. Sirdsdarbība miegā}
-\end{center}
-
+Viens no sirds ritmu ietekmējošiem faktoriem ir arī miegs.
 “Miega laikā skeleta muskulatūra atslābst, palēninās sirdsdarbība un elpošana, nedaudz pazeminās asinsspiediens, ķermeņa temperatūra samazinās, pazeminās vielmaiņas aktivitāte, samazinās urīna izdalīšanās.” (Malvesa, 2001, lpp. 106) \par
 Sirdsdarbības ātrums miegā katram cilvēkam var būt atšķirīgs, tas var būt no 40 līdz 100 sitieniem minūtē. Tas var mainīties katru dienu atkarībā no vairākiem faktoriem: hidrācijas līmeņa, fiziskās slodzes, temperatūras, kā arī psiholoģiskajiem faktoriem. Parasti, cilvēkam aizmiegot, sākumā pulss samazinās. Viszemākais pulss ir miega viduspunktā. Pulss palielinās pirms pamošanās. Ja pamostas laikā, kad pulss ir viszemākais, tad var justies neizgulējies. (Polizzi, 2019) \par
 Bieži vien pulss miega laikā var būt nestabils un atšķirīgs no citām dienām. Lielākoties pulss miega laikā izmainās pateicoties psihoemocionālajiem aspektiem. Ja dienas laikā notika kas negaidīts, kas uztraucošs, tad miega laikā cilvēks vēl joprojām var par to domāt, uztraukties. Tādā gadījumā pulss var būt ātrāks, nekā parasti. Arī, ja nākamajā dienā ir jāizdara kaut kas liels, nopietns, naktī var būt paātrināts pulss, jo ķermenis pilnībā neatslābs, cilvēks nebeidz domāt par nākamo dienu. Tādā gadījumā cilvēks neizguļas pārāk labi. Piemēram, tā varētu notikt naktī pirms eksāmena. Šis eksāmens cilvēkam varētu būt tik nozīmīgs, ka pat naktī cilvēks nespēj nedomāt par to. \par
 Pulsu ietekmē arī sapņi. Ja sapnis ir lēns, mierīgs, tad pulss visticamāk būs lēns un stabils, bez lielām svārstībām. Ja sapnis ir straujš, ātrs, pārsteidzošs, tad pulss var izmainīties, tas var palikt ātrāks. Piemēram, pulss paātrinās murgu laikā. Bieži vien murgu laikā pulss paliek pat tik ātrs, ka cilvēks pamostas no šī murga. Šajā brīdī pat bez pulsa mērīšanas var saprast, ka ir paātrinājies pulss, jo var just, ka sirds sitas ļoti ātri. \par
-Ir ļoti daudz cilvēku, kas nespēj ātri aizmigt, jo visu laiku domā, uztraucas par kaut ko. Šie cilvēki nespēj nomierināties, atslābināt ķermeni, pulss ir salīdzinoši ātrs. Ja šādi notiek ļoti bieži, regulāri, ir jāmeklē risinājums. Brīžiem to var novērst ar cēloņa atrašanu un tā novēršanu. Piemēram, ja nevar aizmigt dēļ strīda ar draugu, tad risinājums ir salīgt ar šo draugu, un iespējams, ka pēc tā būs vieglāk aizmigt. Ja bezmiegu nevar novērst šādā veidā, tad sākuma varētu pamēģināt iedzert kādas nomierinošas tējas (māteres, vilkābeles) vai zālītes (baldriāņus). Ja tas nepalīdz, ir jāvēršas pēc palīdzības pie ārsta.
+Ir ļoti daudz cilvēku, kas nespēj ātri aizmigt, jo visu laiku domā, uztraucas par kaut ko. Šie cilvēki nespēj nomierināties, atslābināt ķermeni, pulss ir salīdzinoši ātrs. Ja šādi notiek regulāri, ir jāmeklē risinājums. Brīžiem to var novērst ar cēloņa atrašanu un tā novēršanu. Piemēram, ja nevar aizmigt dēļ strīda ar draugu, tad risinājums ir salīgt ar šo draugu, un iespējams, ka pēc tā būs vieglāk aizmigt. Ja bezmiegu nevar novērst šādā veidā, tad sākuma varētu pamēģināt iedzert kādas nomierinošas tējas (māteres, vilkābeles, citronzāle, kumelītes, salvija utt.) vai no dabiskajiem augiem iegūtos pilienus (baldriāņus), vai kapsulas (Nervostrong). Ja tas nepalīdz, ir jāvēršas pēc palīdzības pie ārsta.
  (Ozoliņa, 2018) 
 
-\begin{center}
-\addcontentsline{toc}{subsection}{1.5. Sirds ritma izmaiņas stresa laikā}
-{\bf 1.5. Sirds ritma izmaiņas stresa laikā}
-\end{center}
+Stress arī ir kā atsevišķs sirds ritmu ietekmējošs faktors.
+Stress ir daļa no katra cilvēka dzīves. Katrs ar to saskaras gandrīz katru dienu. Tas var ietekmēt cilvēka veselību sliktā ziņā, bet dažkārt tas ir pat vajadzīgs. Piemēram, ja skolēniem pirms eksāmena nebūtu uztraukuma, stresa, tad viņi nemācītos tik daudz, bet stress nedrīkst būt pārāk liels, jo tad nav iespējams domāt. Kā arī pārāk liels stress var jau sākt radīt problēmas veselībai. Var palielināties nogurums un nespēks, kontroles trūkums par savu dzīvi.\par
+“Sirds pukst ātrāk stresa situācijās, jo smadzenes pārraida impulsu virsnierēm, izdalās kateholamīni, noradrenalīns un dopamīns.” (Ozoliņa, 2018) Stresa situācijā ķermenis aktivizē aizsargfunkciju, kas ir  “cīnīties vai bēgt”, ķermenis cenšas cīnīties ar apdraudējumu. Sirds sāk sisties ātrāk, paaugstinās asinsspiediens un arī paaugstinās glikozes līmenis asinīs. Īslaicīgi paātrināta sirdsdarbība nevar kaitēt cilvēka veselībai, bet labāk no tās izvairīties, jo regulāri akūta stresa gadījumi var izraisīt iekaisuma procesus un sabiezējumus sirds artērijās, jo stresa hormoni izdala taukskābes, kas var bojāt artēriju oderi. Trombocīti mēģina sadziedēt bojāto sieniņu, turoties pie tām, kas tieši veicina sabiezējumus. Stress var izraisīt pat sirdstrieku, jo stresa laikā paplašinās asinsvadi un muskuļi saraujas, jo asinis paātrināti un lielā daudzumā tiek nogādātas uz sirdi un lielajiem muskuļiem. \par
+Biežs stress samazina cilvēka imunitāti, samazina spēju ķermenim pašam cīnīties ar slimī\-bām, samazina iespēju pašam izveseļoties dabiski, bez jebkādiem medikamentiem. (Meiere, 16.marts)
 
-Stress ir daļa no katra cilvēka dzīves. Katrs ar to saskaras gandrīz katru dienu. Tas var ietekmēt cilvēka veselību sliktā ziņā, bet dažkārt tas ir pat vajadzīgs. Piemēram, ja skolēniem pirms eksāmena nebūtu uztraukuma, stresa, tad viņi nemācītos tik daudz. Stress viņiem liek mācīties vairāk, tas ir kā motivators. Bet pārāk liels stress var jau sākt radīt problēmas veselībai. Var palielināties nogurums un nespēks, kontroles trūkums par savu dzīvi.\par
-“Sirds pukst ātrāk stresa situācijās, jo smadzenes pārraida impulsu virsnierēm, izdalās kateholamīni, noradrenalīns un dopamīns.” (Ozoliņa, 2018) Stresa situācijā ķermenis aktivizē aizsarg funkciju, kas ir  “cīnīties vai bēgt”, ķermenis cenšas cīnīties ar apdraudējumu. Sirds sāk sisties ātrāk, paaugstinās asinsspiediens un arī paaugstinās glikozes līmenis asinīs. Īslaicīgi paātrināta sirdsdarbība nevar kaitēt cilvēka veselībai, bet labāk no tās izvairīties, jo regulāri akūta stresa gadījumi var izraisīt iekaisuma procesus un sabiezējumus sirds artērijās, jo stresa hormoni izdala taukskābes, kas var bojāt artēriju oderi. Trombocīti mēģina sadziedēt bojāto sieniņu, turoties pie tām, kas tieši veicina sabiezējumus. Stress var izraisīt pat sirdstrieku, jo stresa laikā paplašinās asinsvadi un muskuļi saraujas, jo asinis paātrināti un lielā daudzumā tiek nogādātas uz sirdi un lielajiem muskuļiem. \par
-Bieži vien, lai samazinātu stresu, cilvēki sāk vairāk lietot kofeīnu, smēķēt vai lietot alkoholu. Tas vēl vairāk paātrina sirdsdarbības ātrumu. Saskaņā ar Merilendas Universitātes pētījumiem kofeīna pārmērīga lietošana var paātrināt sirdsdarbības ritmu par 14 sitieniem minūtē. Kofeīna lietošana kopā ar stresu var pat paātrināt sirdsdarbības ritmu par 38 sitieniem minūtē. (Cromar, 2015) \par
-Stress samazina cilvēka imunitāti, samazina spēju ķermenim pašam cīnīties ar slimībām, samazina iespēju pašam izveseļoties dabiski, bez jebkādiem medikamentiem. (Meiere, 16.marts)
-
-\begin{center}
-\addcontentsline{toc}{subsection}{1.6. Sirds ritma izmaiņas baiļu laikā}
-{\bf 1.6. Sirds ritma izmaiņas baiļu laikā}
-\end{center}
-
-Kad kāds saskaras ar bailēm, smadzenes reaģē pirmās uz situāciju, tikai pēc tam sirds reaģē. Tas ir tā pat kā ar stresu. Aktivizējas aizsargfunkcija “cīnīties vai bēgt”.  Šajā laikā var novērot sasvīdušas plaukstas, saspringtus muskuļus, paplašinātas zīlītes, sāpes vēderā vai sliktu dūšu. \par
+Sirds ritms mainās arī baiļu laikā.
+Kad kāds saskaras ar bailēm, smadzenes reaģē pirmās uz situāciju, tikai pēc tam reaģē sirds. Tas ir tāpat kā ar stresu. Aktivizējas aizsargfunkcija ``cīnīties vai bēgt''.  Šajā laikā var novērot sasvīdušas plaukstas, saspringtus muskuļus, paplašinātas zīlītes, sāpes vēderā vai sliktu dūšu. \par
 Sirdi tas var ietekmēt šādos veidos:
 \begin{itemize}
 \setlength\itemsep{0em}
@@ -234,47 +228,42 @@ Daži hormoni, kas atbrīvojas organismā, reaģējot ar bailēm, ir epinefrīns
 \begin{itemize}
 \setlength\itemsep{0em}
   \item Epinefrīns kontrolē sirdsdarbības ātrumu un vielmaiņu, kā rezultātā asinsvadi un gaisa ejas paplašinās vai izvēršas.
-  \item Norepinefrīns izraisa sirdsdarbības ātruma palielināšanos, ļaujot vairāk asinīm plūst muskuļos, vienlaikus atbrīvojot uzkrāto enerģiju glikozes veidā. 
+  \item Norepinefrīns izraisa sirdsdarbības ātruma palielināšanos, ļaujot vairāk asinīm plūst mus\-kuļos, vienlaikus atbrīvojot uzkrāto enerģiju glikozes veidā. 
   \item Kortizols darbojas, lai paaugstinātu cukura un kalcija līmeni asinīs un atbrīvotu baltās asins šūnas.
 \end{itemize}
+(Cromar, 2015)
 
+Baiļu laikā asinīs izdalās arī adrenalīns. Daudzi cilvēki tieši meklē adrenalīnu, tāpēc alpīnisti kāpj kalnos, citi brauc rallija sacīkstēs, vēl citi lec ar izpletni un dara daudzas citas nodarbes, kuru laikā iegūst adrenalīnu. Lai gan viņiem ir bail, tas viņiem dod baudu un prieku. Arī, skatoties šausmu filmas, iegūst adrenalīnu. \par
+Lielākoties bailes nerada veselības problēmas. Parasti tikai uz kādu brīdi sirds sāk sisties straujāk, bet jau pēc brīža viss ir kā iepriekš. Bet ir arī cilvēki ar ļoti vāju sirdi, ar sirds veselības problēmām. Šiem cilvēkiem nav ieteicams meklēt biedējošas lietas, tāpat kā arī maziem bērniem nav ieteicams skatīties šausmu filmas vai meklēt baisus piedzīvojumus, kā lekšanu ar izpletni, jo maziem bērniem sirds vēl nav attīstījusies pietiekami stipra, lai pārdzīvotu lielas bailes. Sekas bērna nobiedēšanai var būt, piemēram, valodas raustīšana, un tas var pat palikt uz visu mūžu. (Cromar, 2015)
 
-Baiļu laikā asinīs izdalās arī adrenalīns. Daudzi cilvēki tieši meklē adrenalīnu, tāpēc alpīnisti kāpj kalnos, citi brauc rallij sacīkstēs, vēl citi lec ar izpletni un dara daudzas citas nodarbes, kuru laikā iegūst adrenalīnu. Lai gan viņiem ir bail, tas viņiem dod baudu un prieku. Arī, skatoties šausmu filmas, iegūst adrenalīnu. \par
-Lielākoties bailes nerada veselības problēmas. Parasti tikai uz kādu brīdi sirds sāk sisties straujāk, bet jau pēc brīža viss ir kā iepriekš. Bet ir arī cilvēki ar ļoti vāju sirdi, ar sirds veselības problēmām. Šiem cilvēkiem nav ieteicams meklēt biedējošas lietas, tā pat, kā arī maziem bērniem nav ieteicams skatīties šausmu filmas vai meklēt baisus piedzīvojumus, kā lekšanu ar izpletni, jo maziem bērniem sirds vēl nav attīstījusies pietiekami stipra, lai pārdzīvotu lielas bailes. Sekas bērna nobiedēšanai var būt, piemēram, valodas raustīšana, un tas var pat palikt uz visu mūžu. (Cromar, 2015)
-
-\begin{center}
-\addcontentsline{toc}{subsection}{1.7. Pandēmijas sekas}
-{\bf 1.7. Pandēmijas sekas}
-\end{center}
-
-Šobrīd ļoti aktuāla tēma ir vīruss COVID-19. Šis vīruss ir skaris visu pasauli. Tas rada sliktas sekas ne tikai ekonomikai, bet arī cilvēku dzīvesveidam, kā arī cilvēku veselībai. \par
-Vīruss bendē veselību ne tikai tiem, kas ir ar to saslimuši, bet arī visiem pārējiem. Pēc Itālijas zinātnieku veikta pētījumi ir secināts, ka ir pieaugušas sirds un asinsvadu komplikācijas. Kā iemesli šādai situācijai ir mazāk aktīvs dzīvesveids, nepareizs uzturs, mentālas problēmas, kā, piemēram, trauksme. (Furio Colivicchi, Stefania Angela Di Fusco,Massimo Magnanti, Manlio Cipriani, Giuseppe Imperoli, 2020)\par
-Balstoties uz Lietuvas dr. Daliusa Barkauska pētījumiem, ir noskaidrots, ka sekas šim vīrusam būs arī hroniskas slimības, piemēram, diabēts vai aptaukošanās. Tas rodas, no nepareiza dzīvesveida, un tieši šie cilvēki vissmagāk var ciest no COVID-19. (Barkauskas, 2020) \par
-Vienai daļai cilvēku ir pazudusi vēlme nodarboties ar aktīvu dzīvesveidu, jo viņiem ir bail, ka viņi varētu saslimt ar vīrusu, bet otrai daļai nemaz vairs nav tādas iespējas. Daudzās pasaules valstīs ir aizslēgtas sporta zāles. Lielākajai daļai cilvēku nav mājās pieejams nepieciešamais aprīkojums, lai sportotu, tāpēc daudzi cilvēki ir pilnībā atteikušies no sportošanas, jo arī šobrīd, kad ārā ir diezgan auksti, vairs nav tik patīkami sporti brīvā dabā. \par
-Karaļa Huana Karlosa universitāte un AWRC-Šefīldas Hallamas universitāte veica pētījumu, kurā tika noskaidrots, ka sporta zāles Eiropas Savienībā ir salīdzinoši ļoti droša vieta, kur doties. Tika izpētīti vairāk nekā 62 miljoni sporta zāļu apmeklējumu, pēc kuriem 2020. gada 25. septembrī noteica, ka vidējais infekcijas līmes ir 0,78 uz 100 000 cilvēkiem. Tas parāda, ka riska līmenis ir ļoti zems. (Fernandez, 2020) \par
-Iešana uz sporta zālēm un aktīva darbība var tieši palīdzēt tikt galā ar pandēmijas situāciju. Ir vairākkārt izpētīts, ka ar vīrusu COVID-19 vairāk saslimst cilvēki, kas nenodarbojas ar fizisku aktivitāti, kuriem ir problēmas ar sirdi un asinsvadiem.  
+%\begin{center}
+%\addcontentsline{toc}{subsection}{1.3. Pandēmijas sekas}
+%{\large\bf 1.3. Pandēmijas sekas}
+%\end{center}
+\subsection{Pandēmijas sekas}
+Šobrīd ļoti aktuāla tēma ir vīruss Covid-19. Šis vīruss ir skāris visu pasauli. Tas rada sliktas sekas ne tikai ekonomikai, bet arī cilvēku dzīvesveidam, kā arī cilvēku veselībai, jo vīruss negatīvi ietekmē veselību ne tikai tiem, kas ir ar to saslimuši, bet arī visiem pārējiem. Pēc Itālijas zinātnieku veikta pētījumi ir secināts, ka ir pieaugušas sirds un asinsvadu komplikācijas. Kā iemesli šādai situācijai ir mazāk aktīvs dzīvesveids, nepareizs uzturs, mentālas problēmas, kā, piemēram, trauksme. (Furio Colivicchi, Stefania Angela Di Fusco,Massimo Magnanti, Manlio Cipriani, Giuseppe Imperoli, 2020)\par
+Balstoties uz Lietuvas dr. Daliusa Barkauska pētījumiem, ir noskaidrots, ka sekas šim vīrusam būs arī hroniskas slimības, piemēram, diabēts vai aptaukošanās. Tas rodas, no nepareiza dzīvesveida, un tieši šie cilvēki vissmagāk var ciest no Covid-19. (Barkauskas, 2020) \par
+Vienai daļai cilvēku ir pazudusi vēlme nodarboties ar aktīvu dzīvesveidu, jo viņiem ir bail, ka viņi varētu saslimt ar vīrusu, bet otrai daļai nemaz vairs nav tādas iespējas. Daudzās pasaules valstīs ir aizliegts apmeklēt sporta zāles. Lielākajai daļai cilvēku nav mājās pieejams nepieciešamais aprīkojums, lai sportotu, tāpēc daudzi cilvēki ir pilnībā atteikušies no sportošanas, jo arī šobrīd, kad ārā ir diezgan auksti, vairs nav tik patīkami sportot brīvā dabā. \par
+Karaļa Huana Karlosa universitāte un AWRC — Šefīldas Hallamas universitāte veica pētījumu, kurā tika noskaidrots, ka sporta zāles Eiropas Savienībā ir salīdzinoši ļoti droša vieta, kur doties. Tika izpētīti vairāk, nekā 62 miljoni sporta zāļu apmeklējumu, pēc kuriem 2020. gada 25. septembrī noteica, ka vidējais infekcijas līmes ir 0,78 uz 100 000 cilvēkiem. Tas parāda, ka riska līmenis ir ļoti zems. (Fernandez, 2020) \par
+Iešana uz sporta zālēm un aktīva darbība var tieši palīdzēt tikt galā ar pandēmijas situāciju. Ir vairākkārt izpētīts, ka ar vīrusu Covid-19 vairāk saslimst cilvēki, kas nenodarbojas ar fizisku aktivitāti, kuriem ir problēmas ar sirdi un asinsvadiem.  
 Lietuvas Veselības klubu asociācija [LSKA] prezidents Aurimas Mačiukas informē, ka šajā pandēmijas situācijā ir tieši ieteicams cilvēkiem nodarboties ar fiziskām aktivitātēm, jo tas var uzlabot imūnsistēmu, samazināt risku saslimt. 
   (Monika Grigutytė, 2020)
 
 \newpage
 
-\begin{center}
-\addcontentsline{toc}{section}{2. PĒTNIECISKĀS DAĻAS REZULTĀTI UN ANALĪZE}
-{\large \bf 2. PĒTNIECISKĀS DAĻAS REZULTĀTI UN ANALĪZE}
-\end{center}
-
-Pētnieciskajā daļā tika izpētīti desmit jaunieši vecumā no 15 līdz 17 gadiem(4 puiši un 6 meitenes). Pētījums sastāv no divām daļām. Pirmajā daļā tiek noskaidrots, kā mainās pulss atkarībā no diviem  dažādiem sirds ritma ietekmējošiem faktoriem. Pirmais faktors bija fiziska aktivitāte, bet otrs faktors bija stress. Otrajā daļā tiek noskaidrots, vai ir kādas izmaiņas šo pašu desmit cilvēku fiziskajā sagatavotībā karantīnas laikā.\par
+%\begin{center}
+%\addcontentsline{toc}{section}{2. PĒTNIECISKĀS DAĻAS REZULTĀTI UN ANALĪZE}
+%{\Large \bf 2. PĒTNIECISKĀS DAĻAS REZULTĀTI UN ANALĪZE}
+%\end{center}
+\section{PĒTNIECISKĀS DAĻAS REZULTĀTI UN ANALĪZE}
+Pētnieciskajā daļā tika izpētīti desmit jaunieši vecumā no 15 līdz 17 gadiem (4 puiši un 6 meitenes). Pētījums sastāv no divām daļām. Pirmajā daļā tiek noskaidrots, kā mainās pulss atkarībā no diviem  dažādiem sirds ritma ietekmējošiem faktoriem. Pirmais faktors bija fiziska aktivitāte, bet otrs faktors bija stress. Otrajā daļā tiek noskaidrots, vai ir kādas izmaiņas šo pašu desmit cilvēku fiziskajā sagatavotībā karantīnas laikā.\par
 Kā pamata rādītājs, ar kuru arī tika salīdzināti iegūtie rezultāti, tika ņemts miera stāvokļa pulss.
 
-\begin{center}
-\addcontentsline{toc}{subsection}{2.1. Fiziskā aktivitāte}
-{\bf 2.1. Fiziskā aktivitāte}
-\end{center}
 
 Ar Harvard step testu tika noteikta katra jaunieša fiziskā sagatavotība pēc normāla sirds ritma atjaunošanās ātruma pēc noteiktas slodzes.\\
 Nepieciešamais aprīkojums:
 \begin{itemize}
-\setlength\itemsep{0em}
+\setlength\itemsep{-0.45em}
   \item Sols, kas ir 50 centimetrus augsts
   \item Hronometrs
   \item Pulsa mērītājs
@@ -288,57 +277,59 @@ Pēc tabulas var noteikt fizisko stāvokli:
 \begin{center}
     \begin{tabular}{|c|c|c|}
     \hline
-    Fiziskais stāvoklis & Indekss puišiem & Indekss meitenēm\\\hline
-    izcils & $>90$ & $>86$\\\hline
-    augsts & $80-90$ & $76-86$\\\hline
-    vidēji augsts & $65-79,99$ & $61-75,9$\\\hline
-    vidēji zems & $55-64,9$ & $50-60,9$\\\hline
-    zems & $<55$ & $<50$\\
+    Fiziskais stāvoklis & Indekss\\\hline
+    izcils & $>96$\\\hline
+    labs & $83-96$\\\hline
+    vidējs & $68-82$\\\hline
+    vidēji zems & $54-67$\\\hline
+    zems & $<54$\\
     \hline
     \end{tabular}
 \end{center}
 (Wood, 2008)\par
-Šo testu pētnieciskās daļas dalībnieki veica divas reizes: pirmo reizi to veica laikā, kad nebija karantīnas, bet otro reizi šo testu veica karantīnas laikā, kad bija jau mēnesi bijusi karantīna. 
-\begin{center}
-\addcontentsline{toc}{subsection}{2.2. Stress}
-{\bf 2.2. Stress}
-\end{center}
+Šo testu pētnieciskās daļas dalībnieki veica divas reizes: pirmo reizi to veica laikā, kad nebija karantīnas, bet otro reizi šo testu veica karantīnas laikā, kad bija jau mēnesi karantīna. 
 
-Lai noteiktu pulsu stresa laikā, visi desmit jaunieši 10 – 20 minūtes spēlēja uztraucošas spēles, kurās bija ātri jāreaģē. Ar pulsometra palīdzību tika mērīts pulss visas spēlēšanas gurumā. Kā beigu rādītājs tika ņemts vērā vidējais pulss.
+
+Lai noteiktu pulsu stresa laikā, visi desmit jaunieši 10 — 20 minūtes spēlēja uztraucošas spēles, kurās bija ātri jāreaģē. Ar pulsometra palīdzību tika mērīts pulss visas spēlēšanas garumā. Kā beigu rādītājs tika ņemts vērā vidējais pulss.
+
 
 \begin{center}
-\addcontentsline{toc}{subsection}{2.3. Iegūtie rezultāti}
-{\bf 2.3. Iegūtie rezultāti}
+\includegraphics[]{Picture1.png}
+\includegraphics[]{Picture8.png}
+\includegraphics[]{Picture12.png}
+\includegraphics[]{Picture10.png}
+\includegraphics[]{Picture2.png}
+\hspace{47mm}
+\includegraphics[]{Picture75.png}
 \end{center}
-Šeit būs grafiki.
 
-Pēc iegūtajiem datiem no pirmā grafika var redzēt, ka cilvēkiem, kuriem ir zemāks miera stāvokļa pulss, tiem ir augstāks fiziskās sagatavotības indekss. Bet tiem, kuriem ir augstāks miera stāvokļa pulss, ir zemāks fiziskās sagatavotības indekss. \par
+Pēc iegūtajiem datiem no pirmā grafika var redzēt, ka cilvēkiem, kuriem ir zemāks miera stāvokļa pulss, ir augstāks fiziskās sagatavotības indekss. Bet tiem, kuriem ir augstāks miera stāvokļa pulss, ir zemāks fiziskās sagatavotības indekss. \par
 No otrā grafika var redzēt, ka cilvēki ar zemāku miera stāvokļa pulsu tiek vieglāk galā ar stresu videospēles spēlēšanas laikā. Izņēmums ir viens punkts, kuram miera stāvokļa pulss ir vidējs starp šiem datiem, bet vidējais pulss videospēles spēlēšanas laikā ir visaugstākais. \par
-Skatoties uz trešo grafiku, var redzēt arī sakarību starp vidējo pulsu videospēles laikā un fiziskās sagatavotības indeksu. Cilvēkiem, kuri ir fiziski spēcīgāki, tie tiek vieglāk galā ar stresu. Kā izņēmums ir viens cilvēks, meitene, kurai ir visaugstākais fiziskās sagatavotības indeksa rādītājs starp meitenēm un ir visaugstākais vidējais pulss videospēles laikā. \par
-Skatoties uz ceturto grafiku, var redzēt, ka visiem dalībniekiem pēc karantīnā pavadīta mēneša, ir palielinājies miera stāvokļa pulss. Septiņiem no dalībniekiem ir pazeminājies fiziskās sagatavotības indekss, bet trim no dalībniekiem ir palielinājies fiziskās sagatavotības indekss. Vidējais fiziskās sagatavotības indekss pirms karantīnas bija 73,95 , bet karantīnas laikā-68,21 .
+Skatoties uz trešo grafiku, var redzēt arī sakarību starp vidējo pulsu videospēles laikā un fiziskās sagatavotības indeksu. Cilvēki, kuri ir fiziski spēcīgāki, tiek vieglāk galā ar stresu. Kā izņēmums ir viens cilvēks, meitene, kurai ir visaugstākais fiziskās sagatavotības indeksa rādītājs starp meitenēm un ir visaugstākais vidējais pulss videospēles laikā. \par
+Skatoties uz ceturto grafiku, var redzēt, ka visiem dalībniekiem pēc karantīnā pavadīta mēneša, ir palielinājies miera stāvokļa pulss. Septiņiem no dalībniekiem ir pazeminājies fiziskās sagatavotības indekss, bet trim no dalībniekiem ir palielinājies fiziskās sagatavotības indekss. Vidējais fiziskās sagatavotības indekss pirms karantīnas bija 73,95 , bet karantīnas laikā — 68,21 .
 
 \newpage
 \begin{center}
 \addcontentsline{toc}{section}{SECINĀJUMI}
-{\large \bf SECINĀJUMI}
+{\Large \bf SECINĀJUMI}
 \end{center}
 
-Darba mērķis ir sasniegts, ir izpētīti, kādi fizioloģiskie un psihoemocionālie faktori ir saistīti ar sirds ritma izmaiņām, kā arī ir noskaidrots, kādas ir fiziskā stāvokļa izmaiņas karantīnas laikā. \par
-Darba uzdevumi ir pildīti:
+Darba mērķis ir sasniegts, ir izpētīti, kādi fizioloģiskie un psihoemocionālie faktori ir sais\-tīti ar sirds ritma izmaiņām, kā arī ir noskaidrots, kādas ir fiziskā stāvokļa izmaiņas karantīnas laikā. \par
+Darba uzdevumi ir izpildīti:
 \begin{enumerate}
   \item Ir apskatīta literatūra par vairākiem sirds ritmu ietekmējošiem faktoriem: fiziskā aktivitāte, miegs, stress, bailes.
   \item Pirms karantīnas tika veikts pētījums, kur tika apskatītas mijsakarības starp miera stāvokļa pulsu, fizisko sagatavotību un stresu.\par
   No iegūtajiem datiem, skatoties uz deviņiem no desmit cilvēkiem, var secināt, ka cilvēki ar labāku fizisko sagatavotību, vieglāk tiek galā ar stresu.
   \item Daļa no pirms karantīnas veiktā pētnieciskā darba tika atkārtoti veikta karantīnas laikā, kurā tika noskaidrotas izmaiņas miera stāvokļa pulsam un fiziskajai sagatavotībai. \par
-Pēc karantīnas laikā iegūtajiem datiem, redzot, ka septiņiem no desmit dalībniekiem fiziskais sagatavotības indekss pazeminājās, var secināt, ka vidēji karantīnas laikā pasliktinās cilvēku fiziskais stāvoklis. Kā arī vidējais fiziskās sagatavotības indekss no visiem desmit dalībniekiem pirms karantīnas bija 73,95, bet karantīnas laikā - 68,21 .
-\item Tika izveidoti grafiki, no kuriem vizuāli pārskatāmi varēja redzēt mijsakarības starp sirds ritmu ietekmējošiem faktoriem, kā arī tika izveidots graifks, kurā varēja redzēt eksperimenta dalībnieku izmaiņas pēc karantīnā pavadīta mēneša. No šiem grafikiem tika analizēti dati un izdarīti secinājumi.
+Pēc karantīnas laikā iegūtajiem datiem, redzot, ka septiņiem no desmit dalībniekiem fiziskais sagatavotības indekss pazeminājās, var secināt, ka vidēji karantīnas laikā pasliktinās cilvēku fiziskais stāvoklis. Kā arī vidējais fiziskās sagatavotības indekss no visiem desmit dalībniekiem pirms karantīnas bija 73,95, bet karantīnas laikā — 68,21 .
+\item Tika izveidoti grafiki, no kuriem vizuāli pārskatāmi varēja redzēt mijsakarības starp sirds ritmu ietekmējošiem faktoriem, kā arī tika izveidots grafiks, kurā varēja redzēt eksperimenta dalībnieku izmaiņas pēc karantīnā pavadīta mēneša. No šiem grafikiem tika analizēti dati un izdarīti secinājumi.
 \end{enumerate}
 Hipotēze apstiprinājās, karantīnas laikā cilvēku vidējais fiziskais sagatavotības līmenis pazeminās.
 
 \newpage
 \begin{center}
 \addcontentsline{toc}{section}{LITERATŪRAS UN INFORMĀCIJAS AVOTU SARAKSTS}
-{\large \bf LITERATŪRAS UN INFORMĀCIJAS AVOTU SARAKSTS}
+{\Large \bf LITERATŪRAS UN INFORMĀCIJAS AVOTU SARAKSTS}
 \def\contname{\empty}
 \end{center}
 
@@ -346,25 +337,25 @@ Hipotēze apstiprinājās, karantīnas laikā cilvēku vidējais fiziskais sagat
 \renewcommand{\section}[2]{}
 \begin{thebibliography}{9}
 \bibitem{Augstkalne} 
-Augstkalne, D. (2007. gada Septembris).\textit{Fiziskās slodzes ietekme uz sirds-asinsvadu sistēmu Vienkāršākā profilakse.} Ielādēts no Doctus: \url{https://www.doctus.lv/2007/9/fiziskas-slodzes-ietekme-uz-sirds-asinsvadu-sistemu-vienkarsaka-profilakse}. Skatīts 13.06.2020. 
+Augstkalne, D. (2007. gada Septembris).\textit{Fiziskās slodzes ietekme uz sirds - asinsvadu sistēmu Vienkāršākā profilakse.} Ielādēts no Doctus: \url{http://bit.ly/34OsTrl}. Skatīts 13.06.2020. 
 
 \bibitem{Barkauskas} 
-Barkauskas, D. (2020. gada 21. 4). \textit{strongfirst.com.} Ielādēts no Minimalist Breathing to Maximize Protection: \url{https://www.strongfirst.com/minimalist-breathing-to-maximize-protection/}. Skatīts 21.12.2020
+Barkauskas, D. (2020. gada 21. 4). \textit{strongfirst.com.} Ielādēts no Minimalist Breathing to Maximize Protection: \url{http://bit.ly/3aNbova}. Skatīts 21.12.2020
 
 \bibitem{Cromar} 
-Cromar, D. (2015. gada 28. 10). \textit{The Effects of Fear on the Heart.} Ielādēts no AEDs Today: \url{https://www.aedstoday.com/The-Effects-of-Fear-on-the-Heart_b_147.html#.XzjwusAzbIU}. Skatīts 13.06.2020.
+Cromar, D. (2015. gada 28. 10). \textit{The Effects of Fear on the Heart.} Ielādēts no AEDs Today: \url{https://bit.ly/3hoxx47}. Skatīts 13.06.2020.
 
 \bibitem{Drabe}
-Drabe, D. (2019. gada 25. 10). \textit{Kā nodrošināt, lai sirds būtu vesela.} Ielādēts no dzivovesels.lv: \url{https://www.dzivovesels.lv/sirds-veseliba}. Skatīts 13.06.2020.
+Drabe, D. (2019. gada 25. 10). \textit{Kā nodrošināt, lai sirds būtu vesela.} Ielādēts no dzivovesels.lv: \url{http://bit.ly/2JtZZFs}. Skatīts 13.06.2020.
 
 \bibitem{Fernandez}
-Fernandez, C. (2020. gada 27. 10). \textit{europeactive.eu.} Ielādēts no SafeACTiVE Study – Preliminary results showing extremely low levels of Covid-19 risk in fitness clubs: \url{https://www.europeactive.eu/news/safeactive-study-%E2%80%93-preliminary-results-showing-extremely-low-levels-covid-19-risk-fitness-clubs}. Skatīts 21.12.2020
+Fernandez, C. (2020. gada 27. 10). \textit{europeactive.eu.} Ielādēts no SafeACTiVE Study – Preliminary results showing extremely low levels of Covid—19 risk in fitness clubs: \url{http://bit.ly/2KYK6XR}. Skatīts 21.12.2020
 
 \bibitem{Furio}
-Furio Colivicchi, Stefania Angela Di Fusco,Massimo Magnanti, Manlio Cipriani, Giuseppe Imperoli. (2020. gada 14. 5). \textit{The Impact of the Coronavirus Disease-2019 Pandemic and Italian Lockdown Measures on Clinical Presentation and Management of Acute Heart Failure.} Ielādēts no ncbi.nlm.nih.gov: \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7224656/}. Skatīts 21.12.2020.
+Furio Colivicchi, Stefania Angela Di Fusco,Massimo Magnanti, Manlio Cipriani, Giuseppe Imperoli. (2020. gada 14. 5). \textit{The Impact of the Coronavirus Disease-2019 Pandemic and Italian Lockdown Measures on Clinical Presentation and Management of Acute Heart Failure.} Ielādēts no ncbi.nlm.nih.gov: \url{http://bit.ly/37Us3uR}. Skatīts 21.12.2020.
 
 \bibitem{Īlena}
-Īlena, T. (2019). \textit{Sociālā pedagoga darbs ar datoratkarīgajiem skolēniem.} Rīga: SIA "Salana Art". Skatīts 13.06.2020.
+Īlena, T. (2019). \textit{Sociālā pedagoga darbs ar datoratkarīgajiem skolēniem.} Rīga: SIA ``Salana Art''. Skatīts 13.06.2020.
 
 \bibitem{Līga}
 Līga Aberberga-Augškalne, Olga Koroļova. (2007). \textit{Fizioloģija ārstiem.} Rīga: SIA Alise-T. Skatīts 13.06.2020.
@@ -373,22 +364,22 @@ Līga Aberberga-Augškalne, Olga Koroļova. (2007). \textit{Fizioloģija ārstie
 Malvesa, L. (2001). \textit{Palīgs dažādās dzīves situācijās.} Rīga: ``RETORIKA A''. Skatīts 13.06.2020.
 
 \bibitem{Meiere}
-Meiere, A. (bez datuma). \textit{Kas vajadzīgs sievietes sirdij dažādos vecumos?} Ielādēts no Santa.lv: \url{https://www.santa.lv/raksts/ieva/kas-vajadzigs-sievietes-sirdij-dazados-vecumos-32065/}. Skatīts 13.06.2020.
+Meiere, A. (bez datuma). \textit{Kas vajadzīgs sievietes sirdij dažādos vecumos?} Ielādēts no Santa.lv: \url{http://bit.ly/2KHrRq7}. Skatīts 13.06.2020.
 
 \bibitem{Materniha}
 Meterniha, K. (2010). \textit{Nūjošana.} Rīga: Zvaigzne ABC. Skatīts 13.06.2020.
 
 \bibitem{Monika}
-Monika Grigutytė, E. (2020. gada 29. 10). \textit{respublika.lt.} Ielādēts no Sporto klubai: lankytojų srautai sumažėjo penktadaliu: \url{https://www.respublika.lt/lt/naujienos/lietuva/verslas/sporto_klubai_lankytoju_srautai_sumazejo_penktadaliu/}. Skatīts 21.12.2020.
+Monika Grigutytė, E. (2020. gada 29. 10). \textit{respublika.lt.} Ielādēts no Sporto klubai: lankytojų srautai sumažėjo penktadaliu: \url{http://bit.ly/2WSRyX7}. Skatīts 21.12.2020.
 
 \bibitem{Ozoliņa}
-Ozoliņa, I. (2018. gada 28. maijs). \textit{veselam.} Ielādēts no la.lv: \url{https://veselam.la.lv/sirds-parak-steidzas}
+Ozoliņa, I. (2018. gada 28. maijs). \textit{Kad sirds pārāk steidzas un kā to pieradināt strādāt mierīgāk} Ielādēts no la.lv: \url{https://bit.ly/2L1F3Gg}. Skatīts 13.06.2020.
 
 \bibitem{Ozoliņš}
-Ozoliņš, R. (2019. gada 5. septembris). \textit{sports.tvnet.lv.} Ielādēts no \url{https://sports.tvnet.lv/6761905/sporta-psihologija-merku-izvirzisana-lamasanas-un-zvaigznu-slimiba}. Skatīts 13.06.2020.
+Ozoliņš, R. (2019. gada 5. septembris). \textit{sports.tvnet.lv.} Ielādēts no \url{http://bit.ly/3rwDf8N}. Skatīts 13.06.2020.
 
 \bibitem{Polizzi}
-Polizzi, M. (2019. gada 28. 8). \textit{Sleeping Heart Rate: Decoding The Clues To Long-Term Wellbeing.} Ielādēts no Biostrap: \url{https://biostrap.com/blog/sleeping-heart-rate/}. Skatīts 13.06.2020.
+Polizzi, M. (2019. gada 28. 8). \textit{Sleeping Heart Rate: Decoding The Clues To Long-Term Wellbeing.} Ielādēts no Biostrap: \url{http://bit.ly/3rHfcEv}. Skatīts 13.06.2020.
 
 \bibitem{Upmanis}
 Upmanis, R. (2005). \textit{Vingro ar prieku!} Rīga: Jumava. Skatīts 13.06.2020.
@@ -397,8 +388,10 @@ Upmanis, R. (2005). \textit{Vingro ar prieku!} Rīga: Jumava. Skatīts 13.06.202
 Valtneris, A. (2004). \textit{Cilvēku fizioloģija.} Rīga: Zvaigzne ABC. Skatīts 13.06.2020.
 
 \bibitem{Wood}
-Wood, R. (2008). \textit{Harvard Step Test.} Ielādēts no topendsports.com: \url{https://www.topendsports.com/testing/tests/step-harvard.htm}. Skatīts 21.12.2020.
+Wood, R. (2008). \textit{Harvard Step Test.} Ielādēts no topendsports.com: \url{http://bit.ly/37RLViq}. Skatīts 21.12.2020.
 \end{thebibliography} 
 
 
 \end{document}
+
+
