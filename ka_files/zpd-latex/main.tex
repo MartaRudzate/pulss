@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
+\usepackage{ucs}
 \usepackage[utf8]{inputenc}
-\usepackage[latvian]{babel}
+%\usepackage[latvian]{babel}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{amsmath}
@@ -13,8 +14,8 @@
 \titleformat{\subsection}[block]{\large\bfseries\filcenter}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[block]{\large\bfseries\filcenter}{\thesubsection}{1em}{}
 \usepackage{blindtext}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
 
 \setlength{\parindent}{2em}
 \setlength{\parskip}{0em}
@@ -32,7 +33,13 @@
  top=25mm,
  bottom=25mm,
  }
- \usepackage{times}
+% \usepackage{times}
+
+
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
+
  
 \begin{document}
 
@@ -293,15 +300,15 @@ Pēc tabulas var noteikt fizisko stāvokli:
 Lai noteiktu pulsu stresa laikā, visi desmit jaunieši 10 — 20 minūtes spēlēja uztraucošas spēles, kurās bija ātri jāreaģē. Ar pulsometra palīdzību tika mērīts pulss visas spēlēšanas garumā. Kā beigu rādītājs tika ņemts vērā vidējais pulss.
 
 
-\begin{center}
-\includegraphics[]{Picture1.png}
-\includegraphics[]{Picture8.png}
-\includegraphics[]{Picture12.png}
-\includegraphics[]{Picture10.png}
-\includegraphics[]{Picture2.png}
-\hspace{47mm}
-\includegraphics[]{Picture75.png}
-\end{center}
+%\begin{center}
+%\includegraphics[]{Picture1.png}
+%\includegraphics[]{Picture8.png}
+%\includegraphics[]{Picture12.png}
+%\includegraphics[]{Picture10.png}
+%\includegraphics[]{Picture2.png}
+%\hspace{47mm}
+%\includegraphics[]{Picture75.png}
+%\end{center}
 
 Pēc iegūtajiem datiem no pirmā grafika var redzēt, ka cilvēkiem, kuriem ir zemāks miera stāvokļa pulss, ir augstāks fiziskās sagatavotības indekss. Bet tiem, kuriem ir augstāks miera stāvokļa pulss, ir zemāks fiziskās sagatavotības indekss. \par
 No otrā grafika var redzēt, ka cilvēki ar zemāku miera stāvokļa pulsu tiek vieglāk galā ar stresu videospēles spēlēšanas laikā. Izņēmums ir viens punkts, kuram miera stāvokļa pulss ir vidējs starp šiem datiem, bet vidējais pulss videospēles spēlēšanas laikā ir visaugstākais. \par
