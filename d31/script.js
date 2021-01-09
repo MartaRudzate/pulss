@@ -149,17 +149,17 @@ d3.csv(myfile, function (data) {
 
     // Returns an object with two points, where each point is an object with an x and y coordinate
 
-    function calcLinear(data, x, y, minX, minY){
+    function calcLinear(myfile, x, y, minX, minY){
       /////////
       //SLOPE//
       /////////
 
       // Let n = the number of data points
-      var n = data.length;
+      var n = myfile.length;
 
       // Get just the points
       var pts = [];
-      data.forEach(function(d,i){
+      myfile.forEach(function(d,i){
         var obj = {};
         obj.x = d[x];
         obj.y = d[y];
