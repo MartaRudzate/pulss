@@ -103,7 +103,7 @@ d3.csv(myfile, function (data) {
 })
 
 	    // see below for an explanation of the calcLinear function
-	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.miera_pulss}), d3.min(data, function(d){ return d.miera_pulss}));
+	    var lg = calcLinear(myfile, "x", "y", d3.min(myfile, function(d){ return d.miera_pulss}), d3.min(myfile, function(d){ return d.miera_pulss}));
 
 	    svg.append("line")
 	        .attr("class", "regression")
@@ -122,7 +122,7 @@ d3.csv(myfile, function (data) {
 	        .call(yAxis);
 
 	    svg.selectAll(".point")
-	        .data(data)
+	        .data(myfile)
 	      .enter().append("circle")
 	        .attr("class", "point")
 	        .attr("r", 3)
