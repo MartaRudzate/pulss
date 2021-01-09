@@ -166,7 +166,6 @@ d3.csv(myfile, function (data) {
         }
       }
 
-    }
 
 
 
@@ -225,3 +224,5 @@ d3.csv(myfile, function (data) {
       .attr('dy','.71em')
       .style('text-anchor','end')
       .text('Fiziskās sagatavotības indekss')
+	    
+    }	    
