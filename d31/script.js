@@ -164,11 +164,10 @@ d3.csv(myfile, function (data) {
           y: minY,
           x: (minY - b) / m
         }
-      }
-
-
-
-
+  
+	      
+	      
+	      
 
 	
   // Circles
@@ -225,4 +224,4 @@ d3.csv(myfile, function (data) {
       .style('text-anchor','end')
       .text('Fiziskās sagatavotības indekss')
 	    
-    }	    
+    })	    
