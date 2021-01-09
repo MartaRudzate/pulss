@@ -24,6 +24,8 @@
 
 	</head>
 	<body>
+		
+		
 
 		<div class="chart"></div>
 		<div class="equation"></div>
@@ -31,9 +33,14 @@
 
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script>
+			
+	 myfile = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQYoW-Iy38kzrY_L6tN2CNqeprUeuTV3he09cMwYHvepiMw3B4_vWCjzje_gN5qxEcUPb1_OyK968yX/pub?gid=0&single=true&output=csv'
+
+		
 	  var margin = {top: 5, right: 5, bottom: 20, left: 20},
-	    width = 450 - margin.left - margin.right,
-	    height = 450 - margin.top - margin.bottom;
+	    width = 500 - margin.left - margin.right,
+	    height = 500 - margin.top - margin.bottom;
+			
 
 	  var svg = d3.select(".chart").append("svg")
 	      .attr("width", width + margin.left + margin.right)
@@ -53,20 +60,20 @@
 	  var yAxis = d3.axisLeft()
 	      .scale(y);
 
-	  d3.csv("data.csv", types, function(error, data){
+	  d3.csv("myfile", types, function(error, data){
 
-	    y.domain(d3.extent(data, function(d){ return d.y}));
-	    x.domain(d3.extent(data, function(d){ return d.x}));
+	    y.domain(d3.extent(myfile, function(d){ return d.fiziskais_indekss}));
+	    x.domain(d3.extent(myfile, function(d){ return d.miera_pulss}));
 
 	    // see below for an explanation of the calcLinear function
-	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.x}), d3.min(data, function(d){ return d.x}));
+	    var lg = calcLinear(myfile, "x", "y", d3.min(myfile, function(d){ return d.miera_pulss}), d3.min(myfile, function(d){ return d.miera_pulss}));
 
 	    svg.append("line")
 	        .attr("class", "regression")
-	        .attr("x1", x(lg.ptA.x))
-	        .attr("y1", y(lg.ptA.y))
-	        .attr("x2", x(lg.ptB.x))
-	        .attr("y2", y(lg.ptB.y));
+	        .attr("x1", x(lg.ptA.miera_pulss))
+	        .attr("y1", y(lg.ptA.fiziskais_indekss))
+	        .attr("x2", x(lg.ptB.miera_pulss))
+	        .attr("y2", y(lg.ptB.fiziskais_indekss));
 
 	    svg.append("g")
 	        .attr("class", "x axis")
@@ -78,12 +85,12 @@
 	        .call(yAxis);
 
 	    svg.selectAll(".point")
-	        .data(data)
+	        .myfile(data)
 	      .enter().append("circle")
 	        .attr("class", "point")
 	        .attr("r", 3)
-	        .attr("cy", function(d){ return y(d.y); })
-	        .attr("cx", function(d){ return x(d.x); });
+	        .attr("cy", function(d){ return y(d.fiziskais_indekss); })
+	        .attr("cx", function(d){ return x(d.miera_pulss); });
 
 	  });
 
@@ -105,17 +112,17 @@
 
     // Returns an object with two points, where each point is an object with an x and y coordinate
 
-    function calcLinear(data, x, y, minX, minY){
+    function calcLinear(myfile, x, y, minX, minY){
       /////////
       //SLOPE//
       /////////
 
       // Let n = the number of data points
-      var n = data.length;
+      var n = myfile.length;
 
       // Get just the points
       var pts = [];
-      data.forEach(function(d,i){
+      myfile.forEach(function(d,i){
         var obj = {};
         obj.x = d[x];
         obj.y = d[y];
@@ -133,9 +140,9 @@
       var sumSq = 0;
       pts.forEach(function(pt){
         sum = sum + pt.mult;
-        xSum = xSum + pt.x;
-        ySum = ySum + pt.y;
-        sumSq = sumSq + (pt.x * pt.x);
+        xSum = xSum + pt.miera_pulss;
+        ySum = ySum + pt.fiziskais_indekss;
+        sumSq = sumSq + (pt.miera_pulss * pt.miera_pulss);
       });
       var a = sum * n;
       var b = xSum * ySum;
