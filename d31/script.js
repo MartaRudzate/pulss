@@ -220,12 +220,4 @@ d3.csv(myfile, function (data) {
           x: (minY - b) / m
         }
   
-	      
-	      
-	      
-
-	
-  
- 
-	    
-    })	    
+      }
