@@ -3,8 +3,6 @@
 //myfile = 'pulsa_dati.csv'
 
 
-		<div class="equation"></div>
-		<div class="equation"></div>
 
 d3.csv(myfile, function (data) {
   // Variables
@@ -152,8 +150,8 @@ d3.csv(myfile, function (data) {
       var b = (e - f) / n;
 
 			// Print the equation below the chart
-			document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
-			document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
+			//document.getElementsByClassName("equation")[0].innerHTML = "y = " + m + "x + " + b;
+			//document.getElementsByClassName("equation")[1].innerHTML = "x = ( y - " + b + " ) / " + m;
 
       // return an object of two points
       // each point is an object with an x and y coordinate
