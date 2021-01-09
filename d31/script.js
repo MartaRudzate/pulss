@@ -3,9 +3,6 @@
 //myfile = 'pulsa_dati.csv'
 
 
-		<div class="chart"></div>
-		<div class="equation"></div>
-		<div class="equation"></div>
 
 d3.csv(myfile, function (data) {
   // Variables
