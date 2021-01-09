@@ -100,7 +100,7 @@ d3.csv(myfile, function (data) {
 	      .attr('dy','.71em')
 	      .style('text-anchor','end')
 	      .text('Fiziskās sagatavotības indekss')
-
+})
 
 	    // see below for an explanation of the calcLinear function
 	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.miera_pulss}), d3.min(data, function(d){ return d.miera_pulss}));
@@ -219,5 +219,6 @@ d3.csv(myfile, function (data) {
           y: minY,
           x: (minY - b) / m
         }
- 
-)
+      }
+
+   }
