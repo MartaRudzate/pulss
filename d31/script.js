@@ -44,7 +44,35 @@ d3.csv(myfile, function (data) {
 	  .ticks(5)
 	  .orient('left')
 	
-	
+	// Circles
+  var circles = svg.selectAll('circle')
+      .data(data)
+      .enter()
+    .append('circle')
+      .attr('cx',function (d) { return xScale(d.miera_pulss) })
+      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
+      .attr('r','5')
+      .attr('stroke','black')
+      .attr('stroke-width',1)
+      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
+      .on('mouseover', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',10)
+          .attr('stroke-width',3)
+      })
+      .on('mouseout', function () {
+        d3.select(this)
+          .transition()
+          .duration(500)
+          .attr('r',5)
+          .attr('stroke-width',1)
+      })
+    .append('title') // Tooltip
+      .text(function (d) { return d.Dzimums +
+                           '\nMiera pulss: ' + (d.miera_pulss) +
+                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
 	
 
 	    // see below for an explanation of the calcLinear function
@@ -170,35 +198,7 @@ d3.csv(myfile, function (data) {
 	      
 
 	
-  // Circles
-  var circles = svg.selectAll('circle')
-      .data(data)
-      .enter()
-    .append('circle')
-      .attr('cx',function (d) { return xScale(d.miera_pulss) })
-      .attr('cy',function (d) {return yScale(d.fiziskais_indekss) })
-      .attr('r','5')
-      .attr('stroke','black')
-      .attr('stroke-width',1)
-      .attr('fill',function (d,i) { if (d.Dzimums == 'Meitene') {return "#FF0000"} else {return "#00FFFF" }})
-      .on('mouseover', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',10)
-          .attr('stroke-width',3)
-      })
-      .on('mouseout', function () {
-        d3.select(this)
-          .transition()
-          .duration(500)
-          .attr('r',5)
-          .attr('stroke-width',1)
-      })
-    .append('title') // Tooltip
-      .text(function (d) { return d.Dzimums +
-                           '\nMiera pulss: ' + (d.miera_pulss) +
-                           '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
+  
   // X-axis
   svg.append('g')
       .attr('class','axis')
