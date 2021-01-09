@@ -51,7 +51,7 @@ d3.csv(myfile, function (data) {
 	
 
 	    // see below for an explanation of the calcLinear function
-	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.x}), d3.min(data, function(d){ return d.x}));
+	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.miera_pulss}), d3.min(data, function(d){ return d.miera_pulss}));
 
 	    svg.append("line")
 	        .attr("class", "regression")
@@ -74,14 +74,14 @@ d3.csv(myfile, function (data) {
 	      .enter().append("circle")
 	        .attr("class", "point")
 	        .attr("r", 3)
-	        .attr("cy", function(d){ return y(d.y); })
-	        .attr("cx", function(d){ return x(d.x); });
+	        .attr("cy", function(d){ return y(d.fiziskais_indekss); })
+	        .attr("cx", function(d){ return x(d.miera_pulss); });
 
 	  });
 
 	  function types(d){
-	    d.x = +d.x;
-	    d.y = +d.y;
+	    d.miera_pulss = +d.miera_pulss;
+	    d.fiziskais_indekss = +d.fiziskais_indekss;
 
 	    return d;
 	  }
