@@ -129,7 +129,7 @@ d3.csv(myfile, function (data) {
 	        .attr("cy", function(d){ return y(d.fiziskais_indekss); })
 	        .attr("cx", function(d){ return x(d.miera_pulss); });
 
-	  });
+	  );
 
 	  function types(d){
 	    d.miera_pulss = +d.miera_pulss;
