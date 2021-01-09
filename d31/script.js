@@ -73,7 +73,34 @@ d3.csv(myfile, function (data) {
       .text(function (d) { return d.Dzimums +
                            '\nMiera pulss: ' + (d.miera_pulss) +
                            '\nFiziskās sagatavotības indekss: ' + (d.fiziskais_indekss) })
-	
+  
+  
+  
+	   // X-axis
+	  svg.append('g')
+	      .attr('class','axis')
+	      .attr('transform', 'translate(0,' + h + ')')
+	      .call(xAxis)
+	    .append('text') // X-axis Label
+	      .attr('class','label')
+	      .attr('y',-10)
+	      .attr('x',w)
+	      .attr('dy','.71em')
+	      .style('text-anchor','end')
+	      .text('Miera pulss')
+	  // Y-axis
+	  svg.append('g')
+	      .attr('class', 'axis')
+	      .call(yAxis)
+	    .append('text') // y-axis Label
+	      .attr('class','label')
+	      .attr('transform','rotate(-90)')
+	      .attr('x',0)
+	      .attr('y',5)
+	      .attr('dy','.71em')
+	      .style('text-anchor','end')
+	      .text('Fiziskās sagatavotības indekss')
+
 
 	    // see below for an explanation of the calcLinear function
 	    var lg = calcLinear(data, "x", "y", d3.min(data, function(d){ return d.miera_pulss}), d3.min(data, function(d){ return d.miera_pulss}));
@@ -199,29 +226,6 @@ d3.csv(myfile, function (data) {
 
 	
   
-  // X-axis
-  svg.append('g')
-      .attr('class','axis')
-      .attr('transform', 'translate(0,' + h + ')')
-      .call(xAxis)
-    .append('text') // X-axis Label
-      .attr('class','label')
-      .attr('y',-10)
-      .attr('x',w)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Miera pulss')
-  // Y-axis
-  svg.append('g')
-      .attr('class', 'axis')
-      .call(yAxis)
-    .append('text') // y-axis Label
-      .attr('class','label')
-      .attr('transform','rotate(-90)')
-      .attr('x',0)
-      .attr('y',5)
-      .attr('dy','.71em')
-      .style('text-anchor','end')
-      .text('Fiziskās sagatavotības indekss')
+ 
 	    
     })	    
